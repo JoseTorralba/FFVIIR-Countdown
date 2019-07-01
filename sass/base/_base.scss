@@ -1,0 +1,24 @@
+// Global Styles
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+
+
+html {
+    font-size: 62.5%;
+    @include respond(tablet-landscape) { font-size: 56.25%; }
+    @include respond(tablet-portrait) { font-size: 50%; }
+    @include respond(big-desktop) { font-size: 75%; }
+}
+
+// When Text is Selected
+::selection {
+    background-color: $primary-color;
+
+}

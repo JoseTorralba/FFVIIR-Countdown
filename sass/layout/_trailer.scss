@@ -1,0 +1,49 @@
+.trailer {
+    // margin-top: 6rem;
+    // overflow-x: scroll;
+    // overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+
+
+    padding: 0 6rem;
+
+    // width: 114rem;
+    margin: 6rem auto 0;
+
+    &:not(:last-child) {
+        grid-row-gap: 6rem;
+    }
+
+    @include respond(tablet-portrait) { 
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &-box {
+        // overflow: hidden;
+
+        &__screenshot {
+            border-radius: 3px;
+            width: 100%;
+            display: block;
+            transition: all .3s;
+            border: 2px solid transparent;
+            // backface-visibility: hidden;
+
+            
+
+            &:hover {
+                cursor: pointer;
+                border: 2px solid #01bc67;
+                transform: translateY(-.4rem);
+            }
+        }
+
+        &__heading {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+    }
+}

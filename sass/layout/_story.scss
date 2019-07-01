@@ -1,0 +1,16 @@
+.story {
+    margin-top: 4rem;
+
+    &__text {
+        font-size: 1.8rem;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+
+        @include respond(tablet-portrait) {
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,162 @@
+.character {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    // margin-top: 6rem;
+    transform: skewY(4deg);
+    & > * { transform: skewY(-4deg); }
+
+    @include respond(tablet-portrait) { 
+        transform: skewY(0);
+        & > * { transform: skewY(0); }
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(smaller-phone) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__box {
+        overflow: hidden;
+
+        &:not(:last-child) {
+            border-right: 1px solid #01bc67;
+
+            @include respond(tablet-portrait) { 
+                border-right: none;
+            }
+        }
+
+        &--img {
+            
+            &-1,
+            &-2,
+            &-3,
+            &-4 {
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                height: 60rem;
+                transition: all .3s;
+
+                @include respond(tablet-landscape) { 
+                    height: 50rem;
+                    pointer-events: none;
+                    transform: scale(1);
+                }
+
+                @include respond(phone) { 
+                    height: 42rem;
+
+                }
+
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                &:hover .character__info{
+                    top: 35rem;
+                }
+            }
+    
+            &-1 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/cloud.jpg);
+            }
+    
+            &-2 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/aerith.jpg);
+            }
+    
+            &-3 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/tifa.jpg);
+            }
+    
+            &-4 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/barret.jpg);
+            }
+        }
+    }
+
+    &__info {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.596);
+        top: 60rem;
+        height: 24rem;
+        width: 100%;
+        transition:  all .3s;
+
+        @include respond(tablet-landscape) { 
+
+            top: 29rem;
+            height: 20rem;
+        }
+
+        @include respond(tablet-portrait) { 
+            top: 35rem;
+            height: 15rem;
+        }
+
+        @include respond(phone) { 
+            font-size: 1.8rem;
+            top: 24rem;
+            height: 20rem;
+        }
+
+        @include respond(smaller-phone) { 
+            top: 24rem;
+
+        }
+
+
+        &--name {
+            font-size: 2rem;
+            width: 26rem;
+            margin: 1rem auto;
+
+            @include respond(tablet-landscape) { 
+                width: 20rem;
+                font-size: 1.6rem;
+            }
+
+            @include respond(tablet-portrait) { 
+                width: 24rem;
+            }
+
+            @include respond(phone) { 
+                width: 20rem;
+            }
+        }
+
+        &--bio {
+            font-size: 1.3rem;
+            width: 26rem;   
+            margin: 0 auto;         
+
+            @include respond(tablet-landscape) { 
+                width: 20rem;
+                font-size: 1.2rem;
+            }
+
+
+            @include respond(tablet-portrait) { 
+                width: 24rem;
+            }
+
+            @include respond(phone) { 
+                width: 20rem;
+            }
+        }
+    }
+}

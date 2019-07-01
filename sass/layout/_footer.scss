@@ -1,0 +1,29 @@
+// Footer
+.footer {
+
+    background-color: #000;
+    color: #fff;
+    padding: 3rem;
+    text-align: center;
+
+    &__text {
+        font-size: 1.4rem;
+
+
+
+        &-link {
+            color: #01bc67;
+            text-decoration: none;
+            transition: all .3s;
+
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+
+    &__logo {
+        margin-top: 2rem;
+        width: 15%;
+    }
+}

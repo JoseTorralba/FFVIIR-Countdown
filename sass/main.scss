@@ -1,0 +1,25 @@
+// ABSTRACTS
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// BASE
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+// COMPONENTS
+@import "components/character-box";
+@import "components/modal-container";
+@import "components/purchase-box";
+
+// LAYOUT
+@import "layout/footer";
+@import "layout/gallery";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/story";
+@import "layout/trailer";
+
+// PAGES
+@import "pages/home";

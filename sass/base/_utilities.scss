@@ -1,0 +1,17 @@
+.margin-top-medium {
+    margin-top: 4rem;
+}
+
+.margin-top-huge {
+    margin-top: 10rem;
+}
+
+.row {
+    max-width: 114rem;
+    margin: 0 auto;
+
+    @include respond(tablet-portrait) {
+        max-width: 50rem;
+        padding: 0 3rem;
+    }
+}

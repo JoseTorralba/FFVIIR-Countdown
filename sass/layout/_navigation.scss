@@ -1,0 +1,59 @@
+.navigation {
+    background-color: #000;
+    position: fixed;
+    padding: 1.8rem 4rem;
+
+    // text-align: center;
+    width: 100%;
+    z-index: 100000;
+
+    transition: font-size .3s;
+    transition: background-color .1s;
+
+    &__logo {
+        float: left;
+        font-size: 1.6rem;
+
+        &--link {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    &__nav {
+        float: right;
+
+    }
+    
+    
+    &__list {
+        font-size: 1.6rem;
+        list-style: none;
+
+    }
+    
+    &__item {
+        display: inline-block;
+    
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+    }
+    
+    &__link {
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        // text-transform: uppercase;
+        transition: all .3s;
+
+        border-bottom: 1.5px solid transparent;
+
+
+        &:hover {
+            color: #01bc67;
+            border-bottom: 1.5px solid $primary-color;
+        }
+    }
+}
+

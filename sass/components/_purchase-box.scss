@@ -1,0 +1,70 @@
+.purchase {
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6rem;
+
+    max-width: 114rem;
+    margin: 6rem auto 0;
+
+    @include respond(tablet-portrait) { 
+        padding: 0 2rem;
+    }
+
+    @include respond(phone) { 
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0 6rem;
+    }
+
+
+    &-box {
+        background-color: rgba(40, 40, 40, 0.8);
+        border-radius: 3px;
+        padding: 2.4rem 0;
+        box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.5);
+        text-align: center;
+
+        &__heading {
+            font-size: 2rem;
+            text-shadow: 0px 5px 10px #000;
+            margin-bottom: 2rem;
+        }
+    
+        &__img {
+            // background-color: #000;
+
+
+            width: 100%;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    
+        &__text {
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+
+
+        &__btn {
+
+            &--main {
+                background-color: #01bc67;
+                border-radius: 3px;
+                color: #fff;
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding: 1rem 3rem;
+                margin-top: 2rem;
+
+                &:link,
+                &:visited {
+                    display: inline-block;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+}
