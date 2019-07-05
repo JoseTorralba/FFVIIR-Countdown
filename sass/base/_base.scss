@@ -7,9 +7,6 @@
     box-sizing: inherit;
 }
 
-
-
-
 html {
     font-size: 62.5%;
     @include respond(tablet-landscape) { font-size: 56.25%; }
@@ -20,5 +17,4 @@ html {
 // When Text is Selected
 ::selection {
     background-color: $primary-color;
-
 }

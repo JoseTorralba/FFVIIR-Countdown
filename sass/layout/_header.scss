@@ -1,13 +1,15 @@
 .header {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, .7),
-        rgba(0, 0, 0, .6)),
-    url(../media/ff7-bg.jpg);
-    background-attachment: fixed;
-    background-position: center;
+    @include backgroundImage('../media/ff7-bg.jpg', .4, .8);
+    // background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     position: relative;
+
+    @include respond(phone) {
+        @include backgroundImage('../media/ff7-bg-mobile.jpg', 0, .6);
+        background-attachment: scroll;
+    }
 
     &-container {
         position: absolute;
@@ -17,10 +19,12 @@
         text-align: center;
 
         &__text-box {
-            // background-color: red;
-            margin-bottom: 10rem;
+            margin-bottom: 2rem;
         }
 
+        &__img {
+            width: 70%;
+        }
 
         &__countdown {
             display: grid;
@@ -30,10 +34,12 @@
 
         &__countdown-box {
 
-
             &--1 {
                 font-size: 5rem;
                 display: block;
+                @include respond(smaller-phone) {
+                    font-size: 4rem;
+                }
             }
 
             &--2 {
@@ -43,7 +49,13 @@
                 font-weight: 700;
                 letter-spacing: 3px;
                 text-shadow: 0px 5px 10px #000;
+
+                @include respond(smaller-phone) {
+                    font-size: 2.5rem;
+                }
             }
         }
     }
 }
+
+

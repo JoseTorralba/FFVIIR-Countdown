@@ -1,7 +1,6 @@
 .character {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    // margin-top: 6rem;
     transform: skewY(4deg);
     & > * { transform: skewY(-4deg); }
 
@@ -11,7 +10,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    @include respond(smaller-phone) {
+    @include respond(phone) {
         grid-template-columns: repeat(1, 1fr);
     }
 
@@ -45,8 +44,11 @@
                 }
 
                 @include respond(phone) { 
-                    height: 42rem;
+                    height: 52rem;
+                }
 
+                @include respond(smaller-phone) { 
+                    height: 40rem;
                 }
 
 
@@ -63,28 +65,28 @@
                 background-image: linear-gradient(
                     rgba(0, 0, 0, 0),
                     rgba(0, 0, 0, .5)),
-                url(../media/cloud.jpg);
+                url(../media/characters/cloud.jpg);
             }
     
             &-2 {
                 background-image: linear-gradient(
                     rgba(0, 0, 0, 0),
                     rgba(0, 0, 0, .5)),
-                url(../media/aerith.jpg);
+                url(../media/characters/aerith.jpg);
             }
     
             &-3 {
                 background-image: linear-gradient(
                     rgba(0, 0, 0, 0),
                     rgba(0, 0, 0, .5)),
-                url(../media/tifa.jpg);
+                url(../media/characters/tifa.jpg);
             }
     
             &-4 {
                 background-image: linear-gradient(
                     rgba(0, 0, 0, 0),
                     rgba(0, 0, 0, .5)),
-                url(../media/barret.jpg);
+                url(../media/characters/barret.jpg);
             }
         }
     }
@@ -104,19 +106,22 @@
         }
 
         @include respond(tablet-portrait) { 
-            top: 35rem;
-            height: 15rem;
+            top: 34rem;
+            height: 16rem;
         }
 
         @include respond(phone) { 
             font-size: 1.8rem;
-            top: 24rem;
-            height: 20rem;
+            top: 38rem;
+            height: 14rem;
         }
 
         @include respond(smaller-phone) { 
-            top: 24rem;
+            top: 26rem;
+        }
 
+        @include respond(older-phone) { 
+            // top: 24rem;
         }
 
 
@@ -126,16 +131,17 @@
             margin: 1rem auto;
 
             @include respond(tablet-landscape) { 
-                width: 20rem;
                 font-size: 1.6rem;
+                width: 20rem;
             }
 
             @include respond(tablet-portrait) { 
+                font-size: 2rem;
                 width: 24rem;
             }
 
             @include respond(phone) { 
-                width: 20rem;
+                width: 30rem;
             }
         }
 
@@ -155,7 +161,7 @@
             }
 
             @include respond(phone) { 
-                width: 20rem;
+                width: 30rem;
             }
         }
     }

@@ -1,59 +1,85 @@
 .navigation {
-    background-color: #000;
-    position: fixed;
-    padding: 1.8rem 4rem;
 
-    // text-align: center;
-    width: 100%;
-    z-index: 100000;
+    &__button {
+        background-image: linear-gradient(
+            rgb(35, 131, 56),
+            rgb(2, 65, 12));
+        border-radius: 50rem;
+        position: fixed;
+        top: 5rem;
+        right: 3rem;
+        width: 8rem;
+        height: 8rem;
+        z-index: 3000;
+    }
 
-    transition: font-size .3s;
-    transition: background-color .1s;
+    &__toggle {
+        color: #fff;
+        position: fixed;
+        top: 7rem;
+        right: -6.3rem;
+        width: 15rem;
+        height: 7rem;
+        z-index: 4000;
 
-    &__logo {
-        float: left;
-        font-size: 1.6rem;
+        @include respond(tablet-portrait) {
+            top: 7.2rem;
+            right: -6.4rem;
+        }
 
-        &--link {
-            color: #fff;
+        &--icon {
+            cursor: pointer;
+            font-size: 3.8rem;
+            text-shadow: 0px 3px 10px rgb(15, 15, 15);
+            transition: all .3s;
+
+            &:hover {
+                transform: translateY(-.2rem);
+            }
+        }
+    }
+
+    &__background {
+        // background-color: $primary-color;
+        background-image: linear-gradient(
+            rgb(35, 131, 56),
+            rgb(2, 65, 12));
+
+        height: 100vh;
+        width: 100%;
+        position: fixed;
+        text-align: center;
+        opacity: 0;
+        transition: all .2s;
+        z-index: -1000;
+    }
+
+    &__list {
+        list-style: none;
+        position: absolute;
+        top: 50%;
+        left: -10rem;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        transition: all .3s;
+    }
+
+    &__item {
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__link {
+        color: #fff;
+        font-weight: 900;
+        text-shadow: 0px 3px 10px rgb(15, 15, 15);
+
+        &:link,
+        &:visited {
+            font-size: 4rem;
             text-decoration: none;
         }
     }
-
-    &__nav {
-        float: right;
-
-    }
-    
-    
-    &__list {
-        font-size: 1.6rem;
-        list-style: none;
-
-    }
-    
-    &__item {
-        display: inline-block;
-    
-        &:not(:last-child) {
-            margin-right: 3rem;
-        }
-    }
-    
-    &__link {
-        color: #fff;
-        font-weight: 700;
-        text-decoration: none;
-        // text-transform: uppercase;
-        transition: all .3s;
-
-        border-bottom: 1.5px solid transparent;
-
-
-        &:hover {
-            color: #01bc67;
-            border-bottom: 1.5px solid $primary-color;
-        }
-    }
 }
-

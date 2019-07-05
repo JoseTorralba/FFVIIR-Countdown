@@ -1,15 +1,13 @@
 // Footer
 .footer {
-
     background-color: #000;
     color: #fff;
     padding: 3rem;
     text-align: center;
+    z-index: 30000;
 
     &__text {
         font-size: 1.4rem;
-
-
 
         &-link {
             color: #01bc67;
@@ -24,6 +22,14 @@
 
     &__logo {
         margin-top: 2rem;
-        width: 15%;
+        width: 25%;
+
+        @include respond(tablet-portrait) {
+            width: 50%;
+        }
+
+        @include respond(smaller-phone) {
+            width: 70%;
+        }
     }
 }

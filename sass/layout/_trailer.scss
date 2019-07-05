@@ -1,15 +1,8 @@
 .trailer {
-    // margin-top: 6rem;
-    // overflow-x: scroll;
-    // overflow: hidden;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 4rem;
-
-
     padding: 0 6rem;
-
-    // width: 114rem;
     margin: 6rem auto 0;
 
     &:not(:last-child) {
@@ -17,11 +10,15 @@
     }
 
     @include respond(tablet-portrait) { 
+        padding: 0 2rem;
+    }
+
+    @include respond(phone) { 
         grid-template-columns: repeat(1, 1fr);
+        padding: 0 6rem;
     }
 
     &-box {
-        // overflow: hidden;
 
         &__screenshot {
             border-radius: 3px;
@@ -29,9 +26,6 @@
             display: block;
             transition: all .3s;
             border: 2px solid transparent;
-            // backface-visibility: hidden;
-
-            
 
             &:hover {
                 cursor: pointer;
@@ -43,7 +37,7 @@
         &__heading {
             font-size: 2rem;
             text-align: center;
+            text-shadow: 0px 5px 10px #000;
         }
-
     }
 }

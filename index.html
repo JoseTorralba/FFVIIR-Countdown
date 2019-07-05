@@ -7,13 +7,12 @@
     <title>Final Fantasy VII Countdown</title>
     <!-- FONT -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <!-- FONTAWESOME CDN -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- FONTAWESOME CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
-
     <!-- Video Modal -->
     <div class="modal-container" id="video-modal-container">
         <div class="modal-container__content">
@@ -38,15 +37,19 @@
     </div>
 
     <!-- Navigation -->
-    <!-- <div class="navigation">
-        <div class="navigation__logo">
-            <a href="#" class="navigation__logo--link">LOGO HERE</a>
+    <div class="navigation">
+        <div class="navigation__button">
+            &nbsp;
         </div>
 
-        <nav class="navigation__nav">
+        <nav class="navigation__background">
             <ul class="navigation__list">
                 <li class="navigation__item">
                     <a href="#story" class="navigation__link scroll">Story</a>
+                </li>
+
+                <li class="navigation__item">
+                    <a href="#trailers" class="navigation__link scroll">Trailers</a>
                 </li>
 
                 <li class="navigation__item">
@@ -54,11 +57,19 @@
                 </li>
 
                 <li class="navigation__item">
+                    <a href="#gallery" class="navigation__link scroll">Gallery</a>
+                </li>
+
+                <li class="navigation__item">
                     <a href="#purchase" class="navigation__link scroll" id="availability">Pre-Order</a>
                 </li>
             </ul>
         </nav>
-    </div> -->
+    </div>
+    <!-- Navigation Toggle -->
+    <div class="navigation__toggle">
+        <i class="fas fa-bars navigation__toggle--icon" aria-hidden="true"></i>
+    </div>
 
     <!-- HEADER -->
     <header class="header">
@@ -66,8 +77,11 @@
 
             <!-- Text Box -->
             <div class="header-container__text-box">
-                <h1 class="primary-heading">Final Fantasy VII Remake</h1>
-                <h2 class="secondary-heading margin-top-medium">Days Until Release</h2>
+                <img class="header-container__img" src="media/logo.png" alt="">
+                <h1 class="primary-heading">
+                    <span class="primary-heading--main">Days Until</span>
+                    <span class="primary-heading--sub">03.03.2020</span>
+                </h1>
             </div>
 
             <!-- Countdown -->
@@ -92,16 +106,19 @@
                     <span class="header-container__countdown-box--2">Secs</span>
                 </p>
             </div>
-            <!-- 0303 2020 -->
+            <!-- Purchase Button -->
+            <div>
+                <a href="#purchase" class="btn btn--main scroll" id="availability">Pre-order</a>
+            </div>
         </div>
     </header>
   
-    <!-- Story Section -->
+    <!-- STORY SECTION -->
     <section class="story-section" id="story">
         <div>
-            <div class="secondary-heading">
+            <h2 class="secondary-heading">
                 Story
-            </div>
+            </h2>
 
             <div class="row">
                 <div class="story">
@@ -117,12 +134,11 @@
                 </div>
             </div>
         </div>
-        <!--  -->
     </section>
 
-
+    <!-- TRAILER SECTION -->
     <section class="trailer-section">
-        <div>
+        <div id="trailers">
             <h2 class="secondary-heading">
                 Trailers
             </h2>
@@ -145,7 +161,7 @@
             </div>
         </div>
 
-        <div class="margin-top-huge">
+        <div class="margin-top-huge" id="characters">
             <h2 class="secondary-heading">
                 Characters
             </h2>
@@ -153,8 +169,8 @@
     </section>
     
 
-    <!-- Characters Section -->
-    <section class="character-info-section" id="characters">
+    <!-- CHARACTERS SECTION -->
+    <section class="character-info-section">
         <div class="character">
             <!-- Cloud -->
             <div class="character__box">
@@ -208,7 +224,7 @@
 
     <!-- GALLERY SECTION -->
     <section class="gallery-section">
-        <div>
+        <div id="gallery">
             <h2 class="secondary-heading">
                 Gallery
             </h2>
@@ -218,11 +234,11 @@
     </section>
     
 
-
+    <!-- PURCHASE SECTION -->
     <section class="purchase-section" id="purchase">
         <div>
             <h2 class="secondary-heading">
-                Pre-Order Today!
+                Order Your Copy
             </h2>
         </div>
 
@@ -231,35 +247,39 @@
                 <h3 class="purchase-box__heading">Standard Edition</h3>
                 <img src="media/preorder-1.jpg" alt="#" class="purchase-box__img image-get">
 
-                <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="purchase-box__btn--main">Per-Order</a>
+                <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
             </div>
 
             <div class="purchase-box">
                 <h3 class="purchase-box__heading">Deluxe Edition</h3>
                 <img src="media/preorder-2.jpg" alt="#" class="purchase-box__img image-get">
     
-                <a href="https://store.na.square-enix-games.com/en_US/product/562667/final-fantasy-vii-remake-deluxe-edition-ps4" target="_blank" class="purchase-box__btn--main">Per-Order</a>
+                <a href="https://store.na.square-enix-games.com/en_US/product/562667/final-fantasy-vii-remake-deluxe-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
             </div>
 
             <div class="purchase-box">
                 <h3 class="purchase-box__heading">1st Class Edition</h3>
                 <img src="media/preorder-4.jpg" alt="#" class="purchase-box__img image-get">
     
-                <a href="https://store.na.square-enix-games.com/en_US/product/562671/final-fantasy-vii-remake-1st-class-edition-ps4" target="_blank" class="purchase-box__btn--main">Per-Order</a>
+                <a href="https://store.na.square-enix-games.com/en_US/product/562671/final-fantasy-vii-remake-1st-class-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="row">
             <p class="footer__text">
-                &copy; 2019 Designed & Developed by 
-                <a href="#header" class="footer__text-link scroll">Jose Torralba</a>
+                &copy; 2019 Site Designed & Developed by 
+                <a href="http://torralbajose.com/" target="_blank" class="footer__text-link scroll">Jose Torralba</a>
             </p>
 
-            <img src="media/square-enix-logo.png" alt="" class="footer__logo">
+            <a href="https://www.square-enix.com/" target="_blank">
+                <img src="media/square-enix-logo.png" alt="square enix logo" class="footer__logo">
+            </a>
         </div>
     </footer>
+
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/app.js"></script>

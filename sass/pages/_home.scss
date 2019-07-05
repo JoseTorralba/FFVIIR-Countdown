@@ -1,103 +1,77 @@
 section {
     padding: 6rem 0;
+    background-attachment: fixed;
+    background-position: top; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include respond(tablet-portrait) {
+        background-attachment: scroll;
+    }
 }
 
 // STORY SECTION
 .story-section {
-    padding: 6rem 0;
-    background-color: rgb(41, 41, 41);
-
-    background-image: linear-gradient(
-        rgba(0, 0, 0, .7),
-        rgba(0, 0, 0, .7)),
-    url(../media/announcement-trailer.jpg);
-    background-attachment: fixed;
-    background-position: top;
-    background-size: cover;
-
+    @include backgroundImage('../media/story-bg.jpg', .6, 1);
     position: relative;
-    z-index: 111111;
-
+    z-index: 2000;
 }
 
-// mess with js
+// TRAILER SECTION
 .trailer-section {
-    background: rgb(0, 0, 0);
-    overflow: hidden;
-    background-image: linear-gradient(
-        rgba(0, 0, 0, .7),
-        rgba(0, 0, 0, .6)),
-    url(../media/bottom-lifestream.jpg);
-    // background-attachment: fixed;
-    background-position: top;
-    background-size: cover;
-
-
-    color: #fff;
+    @include backgroundImage('../media/trailer-bg.jpg', .1, .9);
+    @include addSkewY;
     margin-top: -6rem;
-
-    // give it a third value, use 0 to remember
     padding: 10rem 0 6rem;
     position: relative;
-    transform: skewY(4deg);   
-    & > * { transform: skewY(-4deg); }
-    z-index: 11111;
-
-    @include respond(tablet-portrait) { 
-        transform: skewY(0);
-        & > * { transform: skewY(0); }
-    }
+    z-index: 1000;
 }
-
 
 // CHARACTER SECTION
-.character-info-section {
-    // might be needed
-    // padding: 6rem 0;
-    margin-top: -5rem;
-}
-
+.character-info-section { margin-top: -5rem; }
 
 // GALLERY SECTION
-// mess with js
 .gallery-section {
     background-color: #000;
-    background-image: linear-gradient(
-        rgba(0, 0, 0, .7),
-        rgba(0, 0, 0, .6)),
-    url(../media/top-lifestream.jpg);
-    // background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    
     color: #fff;
     margin-top: -8rem;
     padding: 6rem 0 14rem;
     position: relative;
-    transform: skewY(4deg);   
-    & > * { transform: skewY(-4deg); }
 
+    @include addSkewY;
     @include respond(tablet-portrait) { 
-        transform: skewY(0);
-        & > * { transform: skewY(0); }
-        // margin-top: 0;
+        @include removeSkewY;
+        margin-top: -6rem;
+    }
+}
+
+// TRAILER & GALLERY SECTION
+.trailer-section,
+.gallery-section {
+    @include respond(tablet-portrait) { 
+        @include removeSkewY;
     }
 }
 
 // PURCHASE SECTION
 .purchase-section {
-    background-color: rgb(22, 22, 22);
-    padding: 6rem 0;
+    @include backgroundImage('../media/sephiroth-bg.jpg', .6, 1);
     position: relative;
     margin-top: -6rem;
+    // padding: 8rem 0;
 
-    background-image: linear-gradient(
-        rgba(0, 0, 0, .7),
-        rgba(0, 0, 0, .7)),
-    url(../media/sephiroth-bg.jpg);
+    @include respond(tablet-landscape) { 
+        background-size: cover;
+    }
 
-    background-attachment: fixed;
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include respond(tablet-landscape) { 
+        background-position: right !important;
+        background-size: cover;
+    }
+
+
+    @include respond(phone) { 
+        @include backgroundImage('../media/sephiroth-bg.jpg', .4, 1);
+        background-size: cover;
+        background-attachment: scroll;
+    }
 }

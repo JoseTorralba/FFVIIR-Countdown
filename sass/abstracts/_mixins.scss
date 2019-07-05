@@ -19,3 +19,23 @@
         @media only screen and (min-width: 112.5em) { @content };
     }
 }
+
+// MEDIA QUERY MANAGER
+@mixin backgroundImage($image, $top-opacity, $bottom-opacity) {
+
+    background-image: linear-gradient(
+        rgba(0, 0, 0, $top-opacity),
+        rgba(0, 0, 0, $bottom-opacity)),
+    url($image);
+}
+
+// MEDIA QUERY MANAGER
+@mixin addSkewY {
+    transform: skewY(4deg);   
+    & > * { transform: skewY(-4deg); }
+}
+
+@mixin removeSkewY {
+    transform: skewY(0);
+    & > * { transform: skewY(0); }
+}
