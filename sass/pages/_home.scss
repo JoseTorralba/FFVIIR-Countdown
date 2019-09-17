@@ -54,24 +54,17 @@ section {
 
 // PURCHASE SECTION
 .purchase-section {
-    @include backgroundImage('../media/sephiroth-bg.jpg', .6, 1);
+    @include backgroundImage('../media/purchase-bg.jpg', 0, 1);
+    background-position: bottom;
     position: relative;
     margin-top: -6rem;
     // padding: 8rem 0;
 
-    @include respond(tablet-landscape) { 
-        background-size: cover;
-    }
-
-    @include respond(tablet-landscape) { 
-        background-position: right !important;
-        background-size: cover;
-    }
-
 
     @include respond(phone) { 
-        @include backgroundImage('../media/sephiroth-bg.jpg', .4, 1);
-        background-size: cover;
+        @include backgroundImage('../media/purchase-bg-mobile.jpg', .6, .6);
         background-attachment: scroll;
+        background-position: right;
+        background-size: cover;
     }
 }

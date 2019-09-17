@@ -369,14 +369,15 @@ body {
       transform: scale(1.03); }
 
 .header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("../media/ff7-bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)), url("../media/ff7r-bg.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   position: relative; }
   @media only screen and (max-width: 37.5em) {
     .header {
-      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("../media/ff7-bg-mobile.jpg");
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url("../media/ff7r-bg-mobile.jpg");
       background-attachment: scroll; } }
   .header-container {
     position: absolute;
@@ -411,36 +412,36 @@ body {
 
 .navigation__button {
   background-image: linear-gradient(#238338, #02410c);
-  border-radius: 50rem;
+  border-radius: 1rem;
   position: fixed;
-  top: 5rem;
-  right: 3rem;
-  width: 8rem;
-  height: 8rem;
+  top: 5.5rem;
+  right: 3.5rem;
+  width: 6.5rem;
+  height: 6.5rem;
   z-index: 3000; }
 
 .navigation__toggle {
   color: #fff;
   position: fixed;
   top: 7rem;
-  right: -6.3rem;
+  right: -6.7rem;
   width: 15rem;
   height: 7rem;
   z-index: 4000; }
   @media only screen and (max-width: 56.25em) {
     .navigation__toggle {
-      top: 7.2rem;
-      right: -6.4rem; } }
+      top: 7.1rem;
+      right: -6.9rem; } }
   .navigation__toggle--icon {
     cursor: pointer;
-    font-size: 3.8rem;
-    text-shadow: 0px 3px 10px #0f0f0f;
+    font-size: 3.5rem;
     transition: all .3s; }
     .navigation__toggle--icon:hover {
+      text-shadow: 0px 3px 10px #0f0f0f;
       transform: translateY(-0.2rem); }
 
 .navigation__background {
-  background-image: linear-gradient(#238338, #02410c);
+  background-image: linear-gradient(#12501f, #012206);
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -461,13 +462,14 @@ body {
 .navigation__item:not(:last-child) {
   margin-bottom: 4rem; }
 
-.navigation__link {
+.navigation__link:link, .navigation__link:visited {
   color: #fff;
   font-weight: 900;
-  text-shadow: 0px 3px 10px #0f0f0f; }
-  .navigation__link:link, .navigation__link:visited {
-    font-size: 4rem;
-    text-decoration: none; }
+  font-size: 4rem;
+  text-decoration: none;
+  transition: all .2s; }
+  .navigation__link:link:hover, .navigation__link:visited:hover {
+    text-shadow: 0px 3px 10px #0f0f0f; }
 
 .story {
   margin-top: 4rem; }
@@ -482,8 +484,7 @@ body {
 
 .trailer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4rem;
+  grid-template-columns: repeat(2, 1fr);
   padding: 0 6rem;
   margin: 6rem auto 0; }
   .trailer:not(:last-child) {
@@ -497,16 +498,18 @@ body {
       padding: 0 6rem; } }
   .trailer-box__screenshot {
     border-radius: 3px;
-    width: 100%;
+    margin: 0 auto;
+    width: 80%;
     display: block;
     transition: all .3s;
     border: 2px solid transparent; }
     .trailer-box__screenshot:hover {
       cursor: pointer;
       border: 2px solid #01bc67;
-      transform: translateY(-0.4rem); }
+      transform: translateY(-0.2rem); }
   .trailer-box__heading {
     font-size: 2rem;
+    padding-top: .5rem;
     text-align: center;
     text-shadow: 0px 5px 10px #000; }
 
@@ -563,18 +566,13 @@ section {
       transform: skewY(0); } }
 
 .purchase-section {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), black), url("../media/sephiroth-bg.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), black), url("../media/purchase-bg.jpg");
+  background-position: bottom;
   position: relative;
   margin-top: -6rem; }
-  @media only screen and (max-width: 75em) {
-    .purchase-section {
-      background-size: cover; } }
-  @media only screen and (max-width: 75em) {
-    .purchase-section {
-      background-position: right !important;
-      background-size: cover; } }
   @media only screen and (max-width: 37.5em) {
     .purchase-section {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), black), url("../media/sephiroth-bg.jpg");
-      background-size: cover;
-      background-attachment: scroll; } }
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../media/purchase-bg-mobile.jpg");
+      background-attachment: scroll;
+      background-position: right;
+      background-size: cover; } }

@@ -1,13 +1,13 @@
 .header {
-    @include backgroundImage('../media/ff7-bg.jpg', .4, .8);
-    // background-position: center;
+    @include backgroundImage('../media/ff7r-bg.jpg', .4, .8);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     position: relative;
 
     @include respond(phone) {
-        @include backgroundImage('../media/ff7-bg-mobile.jpg', 0, .6);
+        @include backgroundImage('../media/ff7r-bg-mobile.jpg', 0, .6);
         background-attachment: scroll;
     }
 
@@ -57,5 +57,3 @@
         }
     }
 }
-
-

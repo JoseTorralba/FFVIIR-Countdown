@@ -1,7 +1,7 @@
 .trailer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    // grid-gap: 4rem;
     padding: 0 6rem;
     margin: 6rem auto 0;
 
@@ -22,7 +22,8 @@
 
         &__screenshot {
             border-radius: 3px;
-            width: 100%;
+            margin: 0 auto;
+            width: 80%;
             display: block;
             transition: all .3s;
             border: 2px solid transparent;
@@ -30,12 +31,13 @@
             &:hover {
                 cursor: pointer;
                 border: 2px solid #01bc67;
-                transform: translateY(-.4rem);
+                transform: translateY(-.2rem);
             }
         }
 
         &__heading {
             font-size: 2rem;
+            padding-top: .5rem;
             text-align: center;
             text-shadow: 0px 5px 10px #000;
         }
