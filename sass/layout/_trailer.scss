@@ -1,9 +1,10 @@
 .trailer {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    // grid-gap: 4rem;
-    padding: 0 6rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    // padding: 0 6rem;
     margin: 6rem auto 0;
+    width: 114rem;
 
     &:not(:last-child) {
         grid-row-gap: 6rem;
@@ -23,7 +24,7 @@
         &__screenshot {
             border-radius: 3px;
             margin: 0 auto;
-            width: 80%;
+            width: 100%;
             display: block;
             transition: all .3s;
             border: 2px solid transparent;

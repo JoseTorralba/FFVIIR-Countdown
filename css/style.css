@@ -484,9 +484,10 @@ body {
 
 .trailer {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 0 6rem;
-  margin: 6rem auto 0; }
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin: 6rem auto 0;
+  width: 114rem; }
   .trailer:not(:last-child) {
     grid-row-gap: 6rem; }
   @media only screen and (max-width: 56.25em) {
@@ -499,7 +500,7 @@ body {
   .trailer-box__screenshot {
     border-radius: 3px;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
     display: block;
     transition: all .3s;
     border: 2px solid transparent; }
