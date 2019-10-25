@@ -472,7 +472,8 @@ body {
     text-shadow: 0px 3px 10px #0f0f0f; }
 
 .story {
-  margin-top: 4rem; }
+  margin-top: 4rem;
+  padding: 0 2rem; }
   .story__text {
     font-size: 1.8rem;
     text-align: center; }
@@ -487,12 +488,13 @@ body {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
   margin: 6rem auto 0;
-  width: 114rem; }
+  max-width: 114rem; }
   .trailer:not(:last-child) {
     grid-row-gap: 6rem; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 75em) {
     .trailer {
-      padding: 0 2rem; } }
+      padding: 0 2rem;
+      grid-template-columns: repeat(2, 1fr); } }
   @media only screen and (max-width: 37.5em) {
     .trailer {
       grid-template-columns: repeat(1, 1fr);

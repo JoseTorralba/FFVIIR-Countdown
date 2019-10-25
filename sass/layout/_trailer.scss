@@ -4,14 +4,15 @@
     grid-gap: 2rem;
     // padding: 0 6rem;
     margin: 6rem auto 0;
-    width: 114rem;
+    max-width: 114rem;
 
     &:not(:last-child) {
         grid-row-gap: 6rem;
     }
 
-    @include respond(tablet-portrait) { 
+    @include respond(tablet-landscape) { 
         padding: 0 2rem;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @include respond(phone) { 
