@@ -5,10 +5,7 @@
     grid-gap: 6rem;
     max-width: 114rem;
     margin: 6rem auto 0;
-
-    @include respond(tablet-portrait) { 
-        padding: 0 2rem;
-    }
+    padding: 0 6rem;
 
     @include respond(phone) { 
         grid-template-columns: repeat(1, 1fr);
@@ -16,7 +13,7 @@
     }
 
     &-box {
-        background-color: rgba(30, 30, 30, 0.8);
+        background-color: rgba(0, 0, 0, .8);
         border-radius: 3px;
         padding: 2.4rem 0;
         box-shadow: 0 1.5rem 4rem rgba(0,0,0,0.5);

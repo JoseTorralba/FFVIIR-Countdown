@@ -1,5 +1,5 @@
 .header {
-    @include backgroundImage('../media/ff7r-bg.jpg', .4, .8);
+    @include backgroundImage(to bottom, .4, .8,'../media/background/header.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -7,7 +7,7 @@
     position: relative;
 
     @include respond(phone) {
-        @include backgroundImage('../media/ff7r-bg-mobile.jpg', 0, .6);
+        @include backgroundImage(to bottom, 0, .6,'../media/background/header-mobile.jpg');
         background-attachment: scroll;
     }
 

@@ -1,17 +1,39 @@
-.story {
-    margin-top: 4rem;
-    padding: 0 2rem;
+.story-content {
+    display: grid;
+    grid-template-columns: 40rem 1fr;
+    margin-bottom: 6rem;
+    // padding: 0 6rem;
 
-    &__text {
-        font-size: 1.8rem;
-        text-align: center;
+    @include respond(tablet-portrait) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 
-        &:not(:last-child) {
-            margin-bottom: 3rem;
+    &__empty {
+        @include respond(tablet-portrait) {
+            display: none;
+        }
+    }
+
+    &__text-box {
+        padding-right: 4rem;
+
+        &--text {
+            font-size: 1.7rem;
+            text-align: left;
+    
+            &:not(:last-child) {
+                margin-bottom: 3rem;
+            }
+    
+            @include respond(tablet-portrait) {
+                text-align: left;
+            }
         }
 
         @include respond(tablet-portrait) {
-            text-align: left;
+            background-color: rgba(0, 0, 0, 0.699);
+            border-radius: 3px;
+            padding: 2rem;
         }
     }
 }

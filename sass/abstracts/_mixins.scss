@@ -20,22 +20,31 @@
     }
 }
 
-// MEDIA QUERY MANAGER
-@mixin backgroundImage($image, $top-opacity, $bottom-opacity) {
-
-    background-image: linear-gradient(
+// Background Image Manager
+@mixin backgroundImage($gradient-position, $top-opacity, $bottom-opacity, $image) {
+    background-image: linear-gradient($gradient-position,
         rgba(0, 0, 0, $top-opacity),
         rgba(0, 0, 0, $bottom-opacity)),
     url($image);
 }
 
-// MEDIA QUERY MANAGER
+// Adds Skew
 @mixin addSkewY {
     transform: skewY(4deg);   
     & > * { transform: skewY(-4deg); }
 }
 
+// Removes Skew
 @mixin removeSkewY {
     transform: skewY(0);
     & > * { transform: skewY(0); }
+}
+
+// Clears Float
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }

@@ -143,20 +143,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event Listener when Image is Clicked
     getImage.forEach(function (getImage) {
         getImage.addEventListener('click', function(event) {
+
             // Gets Current href and Inserts onto Image Modal Box
             getModalBox.style.display = 'block';
             getModalImg.src = event.target.src;
         })
     })
-
-    // Header on Scroll Background Image
-    window.addEventListener('scroll', function() {
-
-        const headerScroll = window.pageYOffset/2;
-        var getHeaderBackground = document.querySelector('.header');
-        getHeaderBackground.style.backgroundPositionY = headerScroll + 'px';
-    })
-
 
     // Navigation Object & Variables
     var toggleItem = document.querySelectorAll('.navigation__item');
@@ -207,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     });
 
-
     // Scroll animation
     $("a.scroll").click(function (event) {
         event.preventDefault();
@@ -217,3 +208,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     });
 });
+
+// Trailer Slides
+// Current Slide
+var slideIndex = 1;
+
+// Displays Slides
+showSlides(slideIndex);
+
+// Goes To Previous Slide
+function minusSlides() {
+    showSlides(slideIndex -= 1);
+}
+var prevSlide = document.querySelector('.trailers__prev');
+prevSlide.addEventListener('click', minusSlides);
+
+// Goes To Next Slide
+function plusSlides() {
+    showSlides(slideIndex += 1);
+}
+
+var nextSlide = document.querySelector('.trailers__next');
+nextSlide.addEventListener('click', plusSlides);
+
+// Gets Slides
+function showSlides(cur) {
+    var i;
+    var slides = document.getElementsByClassName("trailers__current");
+
+    if (cur > slides.length) {
+        slideIndex = 1;
+    };
+
+    if (cur < 1) {
+        slideIndex = slides.length;
+    };
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    };
+
+    slides[slideIndex-1].style.display = "block";  
+}

@@ -1,13 +1,16 @@
 .character {
+    // padding: 0 6rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    transform: skewY(4deg);
-    & > * { transform: skewY(-4deg); }
-
-    @include respond(tablet-portrait) { 
-        transform: skewY(0);
-        & > * { transform: skewY(0); }
+    
+    @include addSkewY;
+    @include respond(tablet-landscape) { 
+        @include removeSkewY;
         grid-template-columns: repeat(2, 1fr);
+
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+        }
     }
 
     @include respond(phone) {
@@ -15,22 +18,29 @@
     }
 
     &__box {
+        backface-visibility: hidden;
         overflow: hidden;
-
-        &:not(:last-child) {
-            border-right: 1px solid #01bc67;
-
-            @include respond(tablet-portrait) { 
-                border-right: none;
-            }
+        
+        @supports (-webkit-clip-path: polygon(0 0)) or (clip-path: polygon(0 0)) {
+            -webkit-clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
+            clip-path: polygon(0 0, 100% 4%, 100% 100%, 0 96%);
+        }
+    
+        @include respond(tablet-landscape) {
+            -webkit-clip-path: none;
+            clip-path: none;
         }
 
+
         &--img {
-            
             &-1,
             &-2,
             &-3,
-            &-4 {
+            &-4,
+            &-5,
+            &-6,
+            &-7,
+            &-8 {
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -44,11 +54,11 @@
                 }
 
                 @include respond(phone) { 
-                    height: 52rem;
+                    height: 65rem;
                 }
 
                 @include respond(smaller-phone) { 
-                    height: 40rem;
+                    height: 50rem;
                 }
 
 
@@ -60,7 +70,7 @@
                     top: 35rem;
                 }
             }
-    
+
             &-1 {
                 background-image: linear-gradient(
                     rgba(0, 0, 0, 0),
@@ -88,6 +98,34 @@
                     rgba(0, 0, 0, .5)),
                 url(../media/characters/barret.jpg);
             }
+
+            &-5 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/characters/sephiroth.jpg);
+            }
+
+            &-6 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/characters/reno.jpg);
+            }
+
+            &-7 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/characters/rude.jpg);
+            }
+
+            &-8 {
+                background-image: linear-gradient(
+                    rgba(0, 0, 0, 0),
+                    rgba(0, 0, 0, .5)),
+                url(../media/characters/ifrit.jpg);
+            }
         }
     }
 
@@ -100,9 +138,8 @@
         transition:  all .3s;
 
         @include respond(tablet-landscape) { 
-
             top: 29rem;
-            height: 20rem;
+            height: 22rem;
         }
 
         @include respond(tablet-portrait) { 
@@ -112,18 +149,13 @@
 
         @include respond(phone) { 
             font-size: 1.8rem;
-            top: 38rem;
-            height: 14rem;
+            top: 48rem;
+            height: 20rem;
         }
 
         @include respond(smaller-phone) { 
-            top: 26rem;
+            top: 34rem;
         }
-
-        @include respond(older-phone) { 
-            // top: 24rem;
-        }
-
 
         &--name {
             font-size: 2rem;
@@ -154,7 +186,6 @@
                 width: 20rem;
                 font-size: 1.2rem;
             }
-
 
             @include respond(tablet-portrait) { 
                 width: 24rem;

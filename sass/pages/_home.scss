@@ -1,69 +1,65 @@
 section {
     padding: 6rem 0;
-    background-attachment: fixed;
-    background-position: top; 
+    background-color: #000 !important;
     background-size: cover;
     background-repeat: no-repeat;
     @include respond(tablet-portrait) {
-        background-attachment: scroll;
+        background-attachment: scroll !important;
     }
 }
 
 // STORY SECTION
 .story-section {
-    @include backgroundImage('../media/story-bg.jpg', .6, 1);
+    @include backgroundImage(to right, .2, 1,'../media/background/story.jpg');
+    background-attachment: fixed;
+    background-position: center;
     position: relative;
     z-index: 2000;
+
+    @include respond(tablet-landscape) {
+        background-position: top;
+    }
+
+    @include respond(tablet-portrait) {
+        @include backgroundImage(to bottom, .2, 1,'../media/background/story.jpg');
+        background-position: center;
+    }
 }
 
 // TRAILER SECTION
 .trailer-section {
-    @include backgroundImage('../media/trailer-bg.jpg', .1, .9);
-    @include addSkewY;
-    margin-top: -6rem;
-    padding: 10rem 0 6rem;
-    position: relative;
-    z-index: 1000;
-}
+    @include backgroundImage(to bottom, .2, 1,'../media/background/trailer.jpg');
+    background-position: top;
+    padding: 20rem 0;
 
-// CHARACTER SECTION
-.character-info-section { margin-top: -5rem; }
+    @include respond(phone) {
+        padding: 6rem 0;
+    }
+}
 
 // GALLERY SECTION
 .gallery-section {
-    background-color: #000;
     color: #fff;
     margin-top: -8rem;
     padding: 6rem 0 14rem;
     position: relative;
 
     @include addSkewY;
-    @include respond(tablet-portrait) { 
+    @include respond(tablet-landscape) { 
         @include removeSkewY;
         margin-top: -6rem;
     }
 }
 
-// TRAILER & GALLERY SECTION
-.trailer-section,
-.gallery-section {
-    @include respond(tablet-portrait) { 
-        @include removeSkewY;
-    }
-}
-
 // PURCHASE SECTION
 .purchase-section {
-    @include backgroundImage('../media/purchase-bg.jpg', 0, 1);
-    background-position: bottom;
+    @include backgroundImage(to bottom, 0, 1,'../media/background/purchase.jpg');
+    background-attachment: fixed;
+    background-position: top;
     position: relative;
     margin-top: -6rem;
-    // padding: 8rem 0;
-
 
     @include respond(phone) { 
-        @include backgroundImage('../media/purchase-bg-mobile.jpg', .6, .6);
-        background-attachment: scroll;
         background-position: right;
         background-size: cover;
     }
