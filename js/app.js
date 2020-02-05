@@ -1,9 +1,8 @@
 // Document on Ready
 document.addEventListener('DOMContentLoaded', function() {
-
     function displayCountdown() {
         // Release Date
-        const releaseDate = new Date('Mar 3, 2020 00:00:00').getTime();
+        const releaseDate = new Date('Apr 10, 2020 00:00:00').getTime();
 
         const countdown = setInterval( () => {
 
@@ -38,31 +37,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 clearInterval(getCountdownContainer);
 
                 // Replaces Text
-                var checkAvailability = document.querySelectorAll('#availability')
+                var checkAvailability = document.querySelectorAll('#availability');
                 checkAvailability.forEach(function (checkAvailability) {
                     checkAvailability.textContent = 'Purchase';
                 });
-            }
-        }, 1000)
-    }
+            };
+        }, 1000);
+    };
 
     // Displays Countdown
     displayCountdown();
 
     // Gallery Section
     function displayScreenshots() {
-
         var getGallery = document.querySelector('.gallery');
         var inGameScreenshots = [
             "media/screenshots/1.jpg",
             "media/screenshots/2.jpg",
             "media/screenshots/3.jpg",
             "media/screenshots/4.jpg",
-            "media/screenshots/5.png",
+            "media/screenshots/5.jpg",
             "media/screenshots/6.jpg",
-            "media/screenshots/7.png",
-            "media/screenshots/8.png",
-            "media/screenshots/9.png",
+            "media/screenshots/7.jpg",
+            "media/screenshots/8.jpg",
+            "media/screenshots/9.jpg",
             "media/screenshots/10.jpg",
             "media/screenshots/11.jpg",
             "media/screenshots/12.jpg",
@@ -74,81 +72,73 @@ document.addEventListener('DOMContentLoaded', function() {
             "media/screenshots/18.jpg",
             "media/screenshots/19.jpg",
             "media/screenshots/20.jpg",
-            "media/screenshots/21.jpg"
+            "media/screenshots/21.jpg",
+            "media/screenshots/22.jpg",
+            "media/screenshots/23.jpg",
+            "media/screenshots/24.jpg",
+            "media/screenshots/25.jpg",
+            "media/screenshots/26.jpg",
+            "media/screenshots/27.jpg",
+            "media/screenshots/28.jpg",
+            "media/screenshots/29.jpg",
+            "media/screenshots/30.jpg"
         ];
 
         for (var i = 0; i < inGameScreenshots.length; i++) {
-
-            var imgBox = document.createElement('div');
-            imgBox.classList.add('gallery__container')
-
-            var imgImage = document.createElement('img');
-            imgImage.classList.add('gallery__img')
-            imgImage.classList.add('image-get')
-            imgImage.src = inGameScreenshots[i]
-
-            imgBox.appendChild(imgImage)
-            getGallery.appendChild(imgBox)
-        }
-    }
+            var galleryContainer = document.createElement('div');
+            galleryContainer.classList.add('gallery__container');
+            galleryContainer.innerHTML = `<img src="${inGameScreenshots[i]}" class="gallery__img">`;
+            getGallery.appendChild(galleryContainer);
+        };
+    };
     displayScreenshots();
 
+    // Modal
+    var getModalContainer = document.querySelector('.modal');
+    var getModalMedia = document.querySelector('.modal__media');
+    var getModalToggle = document.querySelector('.modal__toggle--icon');
+    var getVideo = document.querySelectorAll('.thumbnail__img');
+    var getImage = document.querySelectorAll('.gallery__img');
 
-    // VIDEO / IMAGE MODAL
+    // Function Displays Modal
+    function displayModal(type) {
+        getModalContainer.style.display = 'block';
+        getModalMedia.insertAdjacentHTML('afterbegin', type);
+    };
 
-    // MODAL TOGGLE 
-    const getModalToggle = document.querySelectorAll('.modal-container__toggle--icon');
-
-    // Removes Image & Video Modal Box is Clicked
-    getModalToggle.forEach(function (getModalToggle) {
-        getModalToggle.addEventListener('click', function() {
-
-            getModalBox.style.display = 'none';
-            getModalBoxVid.style.display = "none";
-            getModalVid.src = "";
-        })
-    })
-
-    // Removes Image & Video Modal Box whenever a random spot is clicked
-    window.onclick = function(event) {
-        if (event.target == getModalBox || event.target == getModalBoxVid) {
-
-            getModalBox.style.display = "none";
-            getModalBoxVid.style.display = "none";
-            getModalVid.src = "";
-        }
+    // Function Removes Modal
+    function removeModal() {
+        getModalContainer.style.display = "none";
+        getModalMedia.innerHTML = "";
     }
 
+    // Toggle Removes Modal
+    getModalToggle.addEventListener('click', removeModal);
 
-    // Video Modal Variables
-    const getVideo = document.querySelectorAll('.video-get');
-    var getModalBoxVid = document.getElementById('video-modal-container');
-    var getModalVid = document.getElementById('modal-vid');
-
-    // Event Listener when Image is Clicked
+    // Video Thumbnail on Click
     getVideo.forEach(function (getVideo) {
         getVideo.addEventListener('click', function(event) {
 
-            getModalBoxVid.style.display = 'block';
-            getModalVid.src = event.target.dataset.src;
-        })
-    })
+            var displayVideo = `<iframe src="${event.target.dataset.src}" class="modal__vid" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            displayModal(displayVideo);
+        });
+    });
 
-
-    // Image Modal Variables
-    var getModalBox = document.getElementById('modal-container');
-    var getModalImg = document.getElementById('modal-img');
-    const getImage = document.querySelectorAll('.image-get');
-
-    // Event Listener when Image is Clicked
+    // Gallery Image on Click
     getImage.forEach(function (getImage) {
         getImage.addEventListener('click', function(event) {
 
-            // Gets Current href and Inserts onto Image Modal Box
-            getModalBox.style.display = 'block';
-            getModalImg.src = event.target.src;
-        })
-    })
+            var displayImage = `<img src="${event.target.src}" class="modal__img">`;
+            displayModal(displayImage);
+        });
+    });
+
+    // Removes Modal when a random spot outside of media is clicked
+    window.onclick = function(event) {
+        if (event.target == getModalContainer) {
+            removeModal();
+        };
+    };
 
     // Navigation Object & Variables
     var toggleItem = document.querySelectorAll('.navigation__item');
@@ -178,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (navigation.icon.classList.contains('fa-bars')) {
             navigation.background.style.opacity = '1';
             navigation.background.style.zIndex = '4000';
-            navigation.list.style.left = '50%'
+            navigation.list.style.left = '50%';
             toggleNavigationIcon();
 
         } else {
@@ -208,45 +198,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     });
 });
-
-// Trailer Slides
-// Current Slide
-var slideIndex = 1;
-
-// Displays Slides
-showSlides(slideIndex);
-
-// Goes To Previous Slide
-function minusSlides() {
-    showSlides(slideIndex -= 1);
-}
-var prevSlide = document.querySelector('.trailers__prev');
-prevSlide.addEventListener('click', minusSlides);
-
-// Goes To Next Slide
-function plusSlides() {
-    showSlides(slideIndex += 1);
-}
-
-var nextSlide = document.querySelector('.trailers__next');
-nextSlide.addEventListener('click', plusSlides);
-
-// Gets Slides
-function showSlides(cur) {
-    var i;
-    var slides = document.getElementsByClassName("trailers__current");
-
-    if (cur > slides.length) {
-        slideIndex = 1;
-    };
-
-    if (cur < 1) {
-        slideIndex = slides.length;
-    };
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    };
-
-    slides[slideIndex-1].style.display = "block";  
-}

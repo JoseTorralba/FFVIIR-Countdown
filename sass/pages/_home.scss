@@ -30,11 +30,16 @@ section {
 .trailer-section {
     @include backgroundImage(to bottom, .2, 1,'../media/background/trailer.jpg');
     background-position: top;
-    padding: 20rem 0;
+    padding: 15rem 0;
 
     @include respond(phone) {
         padding: 6rem 0;
     }
+}
+
+.thumbnail-section {
+    margin-top: -20rem;
+    background-color: transparent !important;
 }
 
 // GALLERY SECTION

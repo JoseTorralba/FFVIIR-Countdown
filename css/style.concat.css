@@ -252,7 +252,7 @@ body {
         .character__info--bio {
           width: 30rem; } }
 
-.modal-container {
+.modal {
   animation-name: zoom;
   animation-duration: 1s;
   background-color: rgba(0, 0, 0, 0.8);
@@ -261,22 +261,22 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 10000000; }
-  .modal-container__toggle {
+  .modal__toggle {
     font-size: 3.8rem;
     position: fixed;
     top: 2rem;
     right: 2rem; }
     @media only screen and (max-width: 37.5em) {
-      .modal-container__toggle {
+      .modal__toggle {
         top: 1rem; } }
-    .modal-container__toggle--icon {
+    .modal__toggle--icon {
       color: #fff;
       text-shadow: 0px 5px 10px #000;
       transition: all .3s; }
-      .modal-container__toggle--icon:hover {
+      .modal__toggle--icon:hover {
         color: #01bc67;
         cursor: pointer; }
-  .modal-container__content {
+  .modal__content {
     border: 2px solid #01bc67;
     background-color: #000;
     margin: 0 auto;
@@ -285,19 +285,23 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%    !important;
-    height: auto   !important; }
-  .modal-container__img {
     width: 100% !important;
+    height: auto !important; }
+  .modal__img {
+    width: 90% !important;
     height: auto !important;
+    margin: 0 auto;
     display: block; }
-  .modal-container__vid {
+    @media only screen and (max-width: 56.25em) {
+      .modal__img {
+        width: 100% !important; } }
+  .modal__vid {
     display: block;
     margin: 0 auto;
     width: 90% !important;
     height: 90vh !important; }
     @media only screen and (max-width: 37.5em) {
-      .modal-container__vid {
+      .modal__vid {
         height: 40vh !important; } }
 
 .modal-toggle {
@@ -349,8 +353,6 @@ body {
       margin-bottom: 2rem; }
     .purchase-box__img {
       width: 100%; }
-      .purchase-box__img:hover {
-        cursor: pointer; }
     .purchase-box__text {
       font-size: 1.5rem;
       line-height: 1.7; }
@@ -358,7 +360,7 @@ body {
 .footer {
   background-color: #000;
   color: #fff;
-  padding: 3rem;
+  padding: 4rem;
   text-align: center;
   z-index: 30000; }
   .footer__text {
@@ -370,7 +372,7 @@ body {
       .footer__text-link:hover {
         color: #fff; }
   .footer__logo {
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 25%; }
     @media only screen and (max-width: 56.25em) {
       .footer__logo {
@@ -453,66 +455,62 @@ body {
         .header-container__countdown-box--2 {
           font-size: 2.5rem; } }
 
-.navigation__button {
-  background-image: linear-gradient(#238338, #02410c);
-  border-radius: 1rem;
-  position: fixed;
-  top: 5.5rem;
-  right: 3.5rem;
-  width: 6.5rem;
-  height: 6.5rem;
-  z-index: 3000; }
-
-.navigation__toggle {
-  color: #fff;
-  position: fixed;
-  top: 7rem;
-  right: -6.7rem;
-  width: 15rem;
-  height: 7rem;
-  z-index: 4000; }
-  @media only screen and (max-width: 56.25em) {
-    .navigation__toggle {
-      top: 7.1rem;
-      right: -6.9rem; } }
-  .navigation__toggle--icon {
-    cursor: pointer;
-    font-size: 3.5rem;
+.navigation {
+  position: relative; }
+  .navigation__button {
+    background-image: linear-gradient(#238338, #02410c);
+    border-radius: 1rem;
+    position: fixed;
+    top: 5.5rem;
+    right: 3.5rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    z-index: 3000; }
+  .navigation__toggle {
+    color: #fff;
+    position: fixed;
+    top: 7rem;
+    right: -6.7rem;
+    width: 15rem;
+    height: 7rem;
+    z-index: 4000; }
+    @media only screen and (max-width: 56.25em) {
+      .navigation__toggle {
+        top: 7.1rem;
+        right: -6.9rem; } }
+    .navigation__toggle--icon {
+      cursor: pointer;
+      font-size: 3.5rem;
+      transition: all .3s; }
+      .navigation__toggle--icon:hover {
+        text-shadow: 0px 3px 10px #0f0f0f;
+        transform: translateY(-0.2rem); }
+  .navigation__background {
+    background-image: linear-gradient(#12501f, #012206);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    opacity: 0;
+    transition: all .2s;
+    z-index: -1000; }
+  .navigation__list {
+    list-style: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     transition: all .3s; }
-    .navigation__toggle--icon:hover {
-      text-shadow: 0px 3px 10px #0f0f0f;
-      transform: translateY(-0.2rem); }
-
-.navigation__background {
-  background-image: linear-gradient(#12501f, #012206);
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  text-align: center;
-  opacity: 0;
-  transition: all .2s;
-  z-index: -1000; }
-
-.navigation__list {
-  list-style: none;
-  position: absolute;
-  top: 50%;
-  left: -10rem;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  transition: all .3s; }
-
-.navigation__item:not(:last-child) {
-  margin-bottom: 4rem; }
-
-.navigation__link:link, .navigation__link:visited {
-  color: #fff;
-  font-weight: 900;
-  font-size: 4rem;
-  text-decoration: none;
-  transition: all .2s; }
-  .navigation__link:link:hover, .navigation__link:visited:hover {
-    text-shadow: 0px 3px 10px #0f0f0f; }
+  .navigation__item:not(:last-child) {
+    margin-bottom: 4rem; }
+  .navigation__link:link, .navigation__link:visited {
+    color: #fff;
+    font-weight: 900;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: all .2s; }
+    .navigation__link:link:hover, .navigation__link:visited:hover {
+      text-shadow: 0px 3px 10px #0f0f0f; }
 
 .story-content {
   display: grid;
@@ -540,66 +538,32 @@ body {
         border-radius: 3px;
         padding: 2rem; } }
 
-.trailers {
-  margin: 0 auto;
-  max-width: 114rem;
+.thumbnail {
   padding: 0 2rem;
-  position: relative; }
-  @media only screen and (max-width: 56.25em) {
-    .trailers {
-      max-width: 100rem; } }
-  @media only screen and (max-width: 37.5em) {
-    .trailers {
-      max-width: 50rem; } }
-  .trailers__grid {
+  margin: 0 auto;
+  max-width: 120rem; }
+  .thumbnail__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2rem; }
+    grid-gap: 3rem 1.5rem; }
+  .thumbnail__img {
+    display: block;
+    border: 2px solid transparent;
+    border-radius: 1px;
+    display: block;
+    transition: all .2s;
+    width: 100%; }
+    .thumbnail__img:hover {
+      cursor: pointer;
+      border: 2px solid #01bc67; }
     @media only screen and (max-width: 37.5em) {
-      .trailers__grid {
-        grid-template-columns: repeat(1, 1fr); } }
-  .trailers__current {
-    margin-top: 2rem; }
-  .trailers__thumbnails {
-    display: block; }
-    .trailers__thumbnails--img {
-      border: 2px solid transparent;
-      border-radius: 3px;
-      display: block;
-      transition: all .3s;
-      width: 100%; }
-      .trailers__thumbnails--img:hover {
-        cursor: pointer;
-        border: 2px solid #01bc67; }
-      @media only screen and (max-width: 37.5em) {
-        .trailers__thumbnails--img {
-          margin: 0 auto;
-          width: 80%; } }
-  .trailers__heading {
-    font-size: 2rem;
+      .thumbnail__img {
+        margin: 0 auto;
+        width: 80%; } }
+  .thumbnail__heading {
+    font-size: 1.5rem;
     padding-top: .5rem;
-    text-align: center;
     text-shadow: 0px 5px 10px #000; }
-  .trailers__next, .trailers__prev {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid #01bc67;
-    border-radius: 5rem;
-    color: white;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    padding: .5rem 1.5rem;
-    position: absolute;
-    top: 45%;
-    transform: translate(0, -50%);
-    transition: .3s ease;
-    user-select: none; }
-  .trailers__prev {
-    left: 4rem; }
-  .trailers__next {
-    right: 4rem; }
-  .trailers__prev:hover, .trailers__next:hover {
-    background-color: #01bc67; }
 
 section {
   padding: 6rem 0;
@@ -627,10 +591,14 @@ section {
 .trailer-section {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), black), url("../media/background/trailer.jpg");
   background-position: top;
-  padding: 20rem 0; }
+  padding: 15rem 0; }
   @media only screen and (max-width: 37.5em) {
     .trailer-section {
       padding: 6rem 0; } }
+
+.thumbnail-section {
+  margin-top: -20rem;
+  background-color: transparent !important; }
 
 .gallery-section {
   color: #fff;

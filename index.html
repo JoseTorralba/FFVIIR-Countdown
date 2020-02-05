@@ -13,25 +13,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Video Modal -->
-    <div class="modal-container" id="video-modal-container">
-        <div class="modal-container__content">
-            <div class="modal-container__toggle">
-                <i class="modal-container__toggle--icon fas fa-times" aria-hidden="true"></i>
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal__content">
+            <div class="modal__toggle">
+                <i class="modal__toggle--icon fas fa-times" aria-hidden="true"></i>
             </div>
-                
-            <iframe class="modal-container__vid" id="modal-vid" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- Image Modal -->
-    <div class="modal-container" id="modal-container">
-        <div class="modal-container__content">
-            <div class="modal-container__toggle">
-                <i class="modal-container__toggle--icon fas fa-times" aria-hidden="true"></i>
-            </div>
-
-            <img class="modal-container__img" id="modal-img">
+            <div class="modal__media"></div>
         </div>
     </div>
 
@@ -79,7 +67,7 @@
                 <img class="header-container__img" src="media/logo.png" alt="">
                 <h1 class="primary-heading">
                     <span class="primary-heading--main">Days Until</span>
-                    <span class="primary-heading--sub">03.03.2020</span>
+                    <span class="primary-heading--sub">04.10.2020</span>
                 </h1>
             </div>
 
@@ -105,6 +93,7 @@
                     <span class="header-container__countdown-box--2">Secs</span>
                 </p>
             </div>
+
             <!-- Purchase Button -->
             <div>
                 <a href="#purchase" class="btn btn--main scroll" id="availability">Pre-order</a>
@@ -142,65 +131,64 @@
         </div>
     </section>
 
+    <!-- TRAILER SECTION -->
+    <!-- Section is empty to be able to keep the background image as is. -->
+    <section class="trailer-section" id="trailers"></section>
 
-    <section class="trailer-section" id="trailers">
-        <div>
-            <h2 class="secondary-heading text-center">
-                Trailers
-            </h2>
-        </div>
-        
-        <div class="trailers">
-            <div class="trailers__current fade">
-                <div class="trailers__grid">
-                    <div class="trailers__thumbnails">
-                        <img src="media/trailers/trailer-6.jpg" data-src="https://www.youtube.com/embed/tEPb8uQ27BI" alt="Trailer Screenshot" class="trailers__thumbnails--img video-get">
-                        <h3 class="trailers__heading">Game Awards 2019</h3>
-                    </div>
+    <!-- THUMBNAILS SECTION -->
+    <section class="thumbnail-section">
+        <div class="thumbnail">
+            <div class="margin-bottom-small">
+                <h2 class="secondary-heading">
+                    Trailers
+                </h2>
+            </div>
+            <div class="thumbnail__grid">
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-8.jpg" data-src="https://www.youtube.com/embed/3alSpW18SnE?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">Final Fantasy VII Remake Theme Song 2020</h3>
+                </div>
 
-                    <div class="trailers__thumbnails">
-                        <img src="media/trailers/trailer-5.jpg" data-src="https://www.youtube.com/embed/GBpq_Jq7yn0" alt="Trailer Screenshot" class="trailers__thumbnails--img video-get">
-                        <h3 class="trailers__heading">Tokyo Game Show 2019</h3>
-                    </div>
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-7.jpg" data-src="https://www.youtube.com/embed/iEGRZ8itn7g?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">Abzu Battle Gameplay Tokyo Game Show 2019</h3>
+                </div>
 
-                    <div class="trailers__thumbnails">
-                        <img src="media/trailers/trailer-4.jpg" data-src="https://www.youtube.com/embed/pCJZg7pVtiI" alt="Trailer Screenshot" class="trailers__thumbnails--img video-get">
-                        <h3 class="trailers__heading">E3 2019</h3>
-                    </div>
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-6.jpg" data-src="https://www.youtube.com/embed/tEPb8uQ27BI?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">Game Awards 2019</h3>
+                </div>
+
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-5.jpg" data-src="https://www.youtube.com/embed/GBpq_Jq7yn0?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">Tokyo Game Show 2019</h3>
+                </div>
+
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-4.jpg" data-src="https://www.youtube.com/embed/pCJZg7pVtiI?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">E3 2019</h3>
+                </div>
+
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-3.jpg" data-src="https://www.youtube.com/embed/aTCmN8TtkgQ?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">A Symphonic Reunion 2019</h3>
+                </div>
+
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-2.jpg" data-src="https://www.youtube.com/embed/qOn2bWuA_0w?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading">State of Play 2019</h3>
+                </div>
+
+                <div class="thumbnail__box">
+                    <img src="media/trailers/trailer-1.jpg" data-src="https://www.youtube.com/embed/Kznek1uNVsg?rel=0" alt="Trailer Screenshot" class="thumbnail__img">
+                    <h3 class="thumbnail__heading"> Reveal Trailer E3 2015</h3>
                 </div>
             </div>
-
-            <div class="trailers__current fade">
-                <div class="trailers__grid">
-
-                    <div class="trailers__thumbnails">
-                        <img src="media/trailers/trailer-3.jpg" data-src="https://www.youtube.com/embed/aTCmN8TtkgQ" alt="Trailer Screenshot" class="trailers__thumbnails--img video-get">
-                        <h3 class="trailers__heading">A Symphonic Reunion</h3>
-                    </div>
-
-                    <div class="trailers__thumbnails">
-                        <img src="media/trailers/trailer-2.jpg" data-src="https://www.youtube.com/embed/qOn2bWuA_0w" alt="Trailer Screenshot" class="trailers__thumbnails--img video-get">
-                        <h3 class="trailers__heading">State of Play 2019</h3>
-                    </div>
-
-                    <div class="trailers__thumbnails">
-                        <img src="media/trailers/trailer-1.jpg" data-src="https://www.youtube.com/embed/Kznek1uNVsg" alt="Trailer Screenshot" class="trailers__thumbnails--img video-get">
-                        <h3 class="trailers__heading">E3 2015</h3>
-                    </div>
-                </div>
-            </div>
-
-            <a class="trailers__prev">&#10094;</a>
-            <a class="trailers__next">&#10095;</a>
         </div>
-        
-
     </section>
-
 
     <!-- CHARACTERS SECTION -->
     <section class="character-section">
-
         <div class="margin-bottom-medium" id="characters">
             <h2 class="secondary-heading text-center">
                 Characters
@@ -225,9 +213,7 @@
                     <div class="character__info">
                         <h3 class="character__info--name">Aerith Gainsborough</h3>
                         <p class="character__info--bio">
-                            Young, beautiful, and mysterious, Aerith met Cloud while selling Flowers on the streets of Midgar. She decided to join him soon after. Her unusual abilities enable her to use magic.
-
-                            <!-- Aerith is a flower seller who lives in the Sector 5 slums, who first meets Cloud on the streets of Midgar after the bombing of Mako Reactor 1. Shinra has kept a close eye on her ever since she was a child, as she has the ability to hear the voice of the planet. She is often found tending a modest bed of flowers at an old church in Sector 5. -->
+                            Aerith lives in the Sector 5 slums, who first meets Cloud on the streets of Midgar. Shinra has kept a close eye on her ever since she was a child, as she has the ability to hear the voice of the planet.
                         </p>
                     </div>
                 </div>
@@ -333,21 +319,21 @@
         <div class="purchase">
             <div class="purchase-box">
                 <h3 class="purchase-box__heading">Standard Edition</h3>
-                <img src="media/preorder-1.jpg" alt="#" class="purchase-box__img image-get">
+                <img src="media/preorder/1.jpg" alt="#" class="purchase-box__img">
 
                 <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
             </div>
 
             <div class="purchase-box">
                 <h3 class="purchase-box__heading">Deluxe Edition</h3>
-                <img src="media/preorder-2.jpg" alt="#" class="purchase-box__img image-get">
+                <img src="media/preorder/2.jpg" alt="#" class="purchase-box__img">
     
                 <a href="https://store.na.square-enix-games.com/en_US/product/562667/final-fantasy-vii-remake-deluxe-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
             </div>
 
             <div class="purchase-box">
                 <h3 class="purchase-box__heading">1st Class Edition</h3>
-                <img src="media/preorder-4.jpg" alt="#" class="purchase-box__img image-get">
+                <img src="media/preorder/3.jpg" alt="#" class="purchase-box__img">
     
                 <a href="https://store.na.square-enix-games.com/en_US/product/562671/final-fantasy-vii-remake-1st-class-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
             </div>
@@ -357,14 +343,14 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="row">
+            <a href="https://www.square-enix.com/" target="_blank">
+                <img src="media/square-enix-logo.png" alt="square enix logo" class="footer__logo">
+            </a>
+
             <p class="footer__text">
                 &copy; 2019 Site Designed & Developed by 
                 <a href="http://torralbajose.com/" target="_blank" class="footer__text-link scroll">Jose Torralba</a>
             </p>
-
-            <a href="https://www.square-enix.com/" target="_blank">
-                <img src="media/square-enix-logo.png" alt="square enix logo" class="footer__logo">
-            </a>
         </div>
     </footer>
 

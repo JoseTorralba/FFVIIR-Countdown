@@ -1,0 +1,38 @@
+.thumbnail {
+    padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 120rem;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem 1.5rem;
+    }
+
+    &__img {
+        display: block;
+        
+        border: 2px solid transparent;
+        border-radius: 1px;
+        display: block;
+        transition: all .2s;
+        width: 100%;
+
+        &:hover {
+            cursor: pointer;
+            border: 2px solid #01bc67;
+        }
+
+        @include respond(phone) {
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+
+    &__heading {
+        font-size: 1.5rem;
+        padding-top: .5rem;
+        // text-align: center;
+        text-shadow: 0px 5px 10px #000;
+    }
+}

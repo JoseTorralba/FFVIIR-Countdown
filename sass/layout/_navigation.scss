@@ -1,4 +1,5 @@
 .navigation {
+    position: relative;
     
     &__button {
         background-image: linear-gradient(
@@ -60,7 +61,7 @@
         list-style: none;
         position: absolute;
         top: 50%;
-        left: -10rem;
+        // left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
         transition: all .3s;
