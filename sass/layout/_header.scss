@@ -1,10 +1,11 @@
 .header {
-    @include backgroundImage(to bottom, .4, .8,'../media/background/header.jpg');
+    @include backgroundImage(to right, .8, .2,'../media/background/header.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     position: relative;
+    width: 100%;
 
     @include respond(phone) {
         @include backgroundImage(to bottom, 0, .6,'../media/background/header-mobile.jpg');
@@ -18,12 +19,13 @@
         transform: translate(-50%, -50%);
         text-align: center;
 
+
         &__text-box {
             margin-bottom: 2rem;
         }
 
         &__img {
-            width: 70%;
+            width: 65%;
         }
 
         &__countdown {

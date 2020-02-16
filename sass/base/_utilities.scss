@@ -8,6 +8,7 @@
 .margin-bottom-small { margin-bottom: 2rem; }
 .margin-bottom-medium { margin-bottom: 4rem; }
 .margin-bottom-big { margin-bottom: 6rem; }
+.margin-bottom-huge { margin-bottom: 10rem; }
 
 .character-spacing {
     margin-top: -2.4rem;
@@ -23,7 +24,7 @@
     }
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: .5s;
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 1s;
 }

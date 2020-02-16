@@ -10,7 +10,7 @@ section {
 
 // STORY SECTION
 .story-section {
-    @include backgroundImage(to right, .2, 1,'../media/background/story.jpg');
+    @include backgroundImage(to left, 0, 1,'../media/background/story.jpg');
     background-attachment: fixed;
     background-position: center;
     position: relative;
@@ -22,24 +22,17 @@ section {
 
     @include respond(tablet-portrait) {
         @include backgroundImage(to bottom, .2, 1,'../media/background/story.jpg');
+        background-position: left;
+    }
+
+    @include respond(phone) {
         background-position: center;
     }
 }
 
-// TRAILER SECTION
 .trailer-section {
     @include backgroundImage(to bottom, .2, 1,'../media/background/trailer.jpg');
-    background-position: top;
-    padding: 15rem 0;
-
-    @include respond(phone) {
-        padding: 6rem 0;
-    }
-}
-
-.thumbnail-section {
-    margin-top: -20rem;
-    background-color: transparent !important;
+    background-position: center;
 }
 
 // GALLERY SECTION
@@ -58,7 +51,7 @@ section {
 
 // PURCHASE SECTION
 .purchase-section {
-    @include backgroundImage(to bottom, 0, 1,'../media/background/purchase.jpg');
+    @include backgroundImage(to bottom, .2, 1,'../media/background/purchase.jpg');
     background-attachment: fixed;
     background-position: top;
     position: relative;

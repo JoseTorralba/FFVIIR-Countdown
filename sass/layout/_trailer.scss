@@ -1,4 +1,4 @@
-.thumbnail {
+.trailer {
     padding: 0 2rem;
     margin: 0 auto;
     max-width: 120rem;
@@ -7,11 +7,13 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 3rem 1.5rem;
+
+        @include respond(phone) {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__img {
-        display: block;
-        
         border: 2px solid transparent;
         border-radius: 1px;
         display: block;
@@ -25,7 +27,7 @@
 
         @include respond(phone) {
             margin: 0 auto;
-            width: 80%;
+            // width: 80%;
         }
     }
 

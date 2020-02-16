@@ -1,20 +1,11 @@
-// Modal Box Zoom
-@keyframes zoom {
+// Modal Box / Edition Fade In
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
-    50% {
-        opacity: 1;
-    }
-}
 
-@keyframes fade {
-    0% {
-        opacity: 0;
-        transform: translateY(.4rem);
-    }
+
     100% {
         opacity: 1;
-        transform: translateY(0);
     }
 }

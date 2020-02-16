@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var getModalContainer = document.querySelector('.modal');
     var getModalMedia = document.querySelector('.modal__media');
     var getModalToggle = document.querySelector('.modal__toggle--icon');
-    var getVideo = document.querySelectorAll('.thumbnail__img');
+    var getVideo = document.querySelectorAll('.trailer__img');
     var getImage = document.querySelectorAll('.gallery__img');
 
     // Function Displays Modal
@@ -198,3 +198,62 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     });
 });
+
+
+
+// Current Slide
+var slideIndex = 1;
+
+// Displays Slides
+showSlides(slideIndex);
+
+
+// Gets Slides
+function showSlides(cur) {
+    var dots;
+    var i;
+    var slides = document.getElementsByClassName("purchase-box__edition");
+    dots = document.getElementsByClassName("btn--editions");
+
+    if (cur > slides.length) {
+        slideIndex = 1;
+    };
+
+    if (cur < 1) {
+        slideIndex = slides.length;
+    };
+
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    };
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+
+    };
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+
+
+// Keeps Track of Current Slide for Dots
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// Dots On Click
+var firstDot = document.getElementById('1');
+firstDot.addEventListener('click', function() {
+    currentSlide(1)
+})
+
+var secondDot = document.getElementById('2');
+secondDot.addEventListener('click', function() {
+    currentSlide(2)
+})
+
+var thirdDot = document.getElementById('3');
+thirdDot.addEventListener('click', function() {
+    currentSlide(3)
+})
+

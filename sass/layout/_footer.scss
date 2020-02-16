@@ -6,6 +6,24 @@
     text-align: center;
     z-index: 30000;
 
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__logo {
+        margin-bottom: 2rem;
+        width: 100%;
+
+        @include respond(tablet-portrait) {
+            width: 50%;
+        }
+
+        @include respond(smaller-phone) {
+            width: 70%;
+        }
+    }
+
     &__text {
         font-size: 1.4rem;
 
@@ -17,19 +35,6 @@
             &:hover {
                 color: #fff;
             }
-        }
-    }
-
-    &__logo {
-        margin-bottom: 2rem;
-        width: 25%;
-
-        @include respond(tablet-portrait) {
-            width: 50%;
-        }
-
-        @include respond(smaller-phone) {
-            width: 70%;
         }
     }
 }
