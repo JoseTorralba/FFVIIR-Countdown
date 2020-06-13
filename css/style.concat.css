@@ -525,16 +525,16 @@ body {
   .header__wave--2, .header__wave--3 {
     animation-direction: reverse; }
   .header__wave--1 {
-    background: url(../../media/assets/wave-2.svg);
+    background: url(../media/assets/wave-2.svg);
     opacity: .1; }
   .header__wave--2 {
-    background: url(../../media/assets/wave-2.svg);
+    background: url(../media/assets/wave-2.svg);
     opacity: .2; }
   .header__wave--3 {
-    background: url(../../media/assets/wave-1.svg);
+    background: url(../media/assets/wave-1.svg);
     opacity: .1; }
   .header__wave--4 {
-    background: url(../../media/assets/wave-1.svg);
+    background: url(../media/assets/wave-1.svg);
     opacity: .2; }
 
 .navigation {
