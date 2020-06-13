@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     function displayCountdown() {
         // Release Date
-        const releaseDate = new Date('Apr 10, 2020 00:00:00').getTime();
+        const releaseDate = new Date('April 10, 2020 00:00:00').getTime();
 
         const countdown = setInterval( () => {
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const hoursLeft = Math.floor((distance % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60))
             const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
-        
+
             // Gets Days/Hours/Minutes/Seconds and Displays it
             const showDay = document.getElementById('days');
             showDay.textContent = daysLeft;
@@ -35,6 +35,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // When countdown reaches release date
             if (distance < 0 ) {
                 clearInterval(getCountdownContainer);
+
+                getCountdownContainer.style.display = 'none';
+
+                var getMainHeading = document.querySelector('.primary-heading--main');
+                getMainHeading.textContent = 'Available'
+
+                var getSubHeading = document.querySelector('.primary-heading--sub');
+                getSubHeading.textContent = 'Now'
 
                 // Replaces Text
                 var checkAvailability = document.querySelectorAll('#availability');
@@ -97,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var getModalContainer = document.querySelector('.modal');
     var getModalMedia = document.querySelector('.modal__media');
     var getModalToggle = document.querySelector('.modal__toggle--icon');
-    var getVideo = document.querySelectorAll('.trailer__img');
     var getImage = document.querySelectorAll('.gallery__img');
 
     // Function Displays Modal
@@ -114,15 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Toggle Removes Modal
     getModalToggle.addEventListener('click', removeModal);
-
-    // Video Thumbnail on Click
-    getVideo.forEach(function (getVideo) {
-        getVideo.addEventListener('click', function(event) {
-
-            var displayVideo = `<iframe src="${event.target.dataset.src}" class="modal__vid" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-            displayModal(displayVideo);
-        });
-    });
 
     // Gallery Image on Click
     getImage.forEach(function (getImage) {
@@ -189,6 +187,89 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     });
 
+// Trailer
+var getCurrentTrailer = document.querySelector('.trailer__current')
+var getMateriaImage = document.querySelectorAll('.trailer__materia--img');
+
+// Current Slide
+var trailerIndex = 1;
+
+// Displays Slides
+displayTrailer(trailerIndex);
+
+// Goes To Previous Trailer
+function minusTrailers() {
+    displayTrailer(trailerIndex -= 1);
+}
+
+var prevTrailer = document.querySelector('.trailer__prev');
+prevTrailer.addEventListener('click', minusTrailers);
+
+// Goes To Next Trailer
+function plusTrailers() {
+    displayTrailer(trailerIndex += 1);
+}
+var nextTrailer = document.querySelector('.trailer__next');
+nextTrailer.addEventListener('click', plusTrailers);
+
+// Gets Slides
+function displayTrailer(cur) {
+    var materia;
+    var i;
+    materia = document.getElementsByClassName("trailer__materia");
+
+    if (cur > materia.length) {
+        trailerIndex = 1;
+    };
+
+    if (cur < 1) {
+        trailerIndex = materia.length;
+    };
+
+    for (i = 0; i < materia.length; i++) {
+        materia[i].className = materia[i].className.replace(" active-materia", "");
+    };
+
+    getCurrentTrailer.src = getMateriaImage[trailerIndex - 1].dataset.src;
+    materia[trailerIndex - 1].className += " active-materia";   
+}
+
+// Keeps Track of Current Trailer for Materia Images
+function currentTrailer(n) {
+    displayTrailer(trailerIndex = n);
+}
+
+// Materia Image on Click Changes Current Trailer
+getMateriaImage.forEach(function (getMateriaImage) {
+    getMateriaImage.addEventListener('click', function() {
+
+        var getMateriaID = Number(getMateriaImage.id);
+        currentTrailer(getMateriaID)
+        getCurrentTrailer.src = getMateriaImage.dataset.src
+    });
+});
+
+// Game Editions Tabs
+function gameEditionsTabs(event) {
+    let activeTabs = document.querySelectorAll('.active');
+    console.log(activeTabs)
+  
+    // deactivate existing active tab and panel 
+    activeTabs.forEach(function(tab) {
+      tab.className = tab.className.replace('active', '');
+    });
+  
+    // activate new tab and panel
+    event.target.className += ' active';
+    document.getElementById(event.target.href.split('#')[1]).className += ' active';
+  };
+
+  var editionButtons = document.querySelectorAll('.btn--editions');
+
+  editionButtons.forEach(function (editionButtons) {
+    editionButtons.addEventListener('click', gameEditionsTabs, false);
+  });
+
     // Scroll animation
     $("a.scroll").click(function (event) {
         event.preventDefault();
@@ -198,62 +279,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     });
 });
-
-
-
-// Current Slide
-var slideIndex = 1;
-
-// Displays Slides
-showSlides(slideIndex);
-
-
-// Gets Slides
-function showSlides(cur) {
-    var dots;
-    var i;
-    var slides = document.getElementsByClassName("purchase-box__edition");
-    dots = document.getElementsByClassName("btn--editions");
-
-    if (cur > slides.length) {
-        slideIndex = 1;
-    };
-
-    if (cur < 1) {
-        slideIndex = slides.length;
-    };
-
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-    };
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-
-    };
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-}
-
-
-// Keeps Track of Current Slide for Dots
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-// Dots On Click
-var firstDot = document.getElementById('1');
-firstDot.addEventListener('click', function() {
-    currentSlide(1)
-})
-
-var secondDot = document.getElementById('2');
-secondDot.addEventListener('click', function() {
-    currentSlide(2)
-})
-
-var thirdDot = document.getElementById('3');
-thirdDot.addEventListener('click', function() {
-    currentSlide(3)
-})
-

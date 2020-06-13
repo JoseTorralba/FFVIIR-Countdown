@@ -55,129 +55,142 @@
 
     <!-- HEADER -->
     <header class="header">
-        <div class="header-container">
-
-            <!-- Text Box -->
-            <div class="header-container__text-box">
-                <img class="header-container__img" src="media/assets/logo.png" alt="">
-                <h1 class="primary-heading">
-                    <span class="primary-heading--main">Days Until</span>
-                    <span class="primary-heading--sub">04.10.2020</span>
-                </h1>
+        <div class="header__text-box">
+            <div class="header__img-box">
+                <img class="header__img" src="media/assets/logo.png" alt="Final Fantasy VII Remake Logo">
             </div>
+            <h1 class="primary-heading">
+                <span class="primary-heading--main">Available</span>
+                <span class="primary-heading--sub">04.10.2020</span>
+            </h1>
 
             <!-- Countdown -->
-            <div class="header-container__countdown" id="countdown">
-                <p class="header-container__countdown-box">
-                    <span class="header-container__countdown-box--1" id="days"></span>
-                    <span class="header-container__countdown-box--2">Days</span>
+            <div class="header__countdown" id="countdown">
+                <p class="header__countdown-box">
+                    <span class="header__countdown-box--1" id="days"></span>
+                    <span class="header__countdown-box--2">Days</span>
                 </p>
 
-                <p class="header-container__countdown-box">
-                    <span class="header-container__countdown-box--1" id="hours"></span>
-                    <span class="header-container__countdown-box--2">Hours</span>
+                <p class="header__countdown-box">
+                    <span class="header__countdown-box--1" id="hours"></span>
+                    <span class="header__countdown-box--2">Hours</span>
                 </p>
 
-                <p class="header-container__countdown-box">
-                    <span class="header-container__countdown-box--1" id="mins"></span>
-                    <span class="header-container__countdown-box--2">Mins</span>
+                <p class="header__countdown-box">
+                    <span class="header__countdown-box--1" id="mins"></span>
+                    <span class="header__countdown-box--2">Mins</span>
                 </p>
 
-                <p class="header-container__countdown-box">
-                    <span class="header-container__countdown-box--1" id="secs"></span>
-                    <span class="header-container__countdown-box--2">Secs</span>
+                <p class="header__countdown-box">
+                    <span class="header__countdown-box--1" id="secs"></span>
+                    <span class="header__countdown-box--2">Secs</span>
                 </p>
             </div>
 
             <!-- Purchase Button -->
             <div>
-                <a href="#purchase" class="btn btn--main scroll" id="availability">Pre-order</a>
+                <a href="#purchase" class="btn btn--main btn btn--main-active scroll" id="availability">Pre-order</a>
+                <a href="https://store.playstation.com/en-us/product/UP0082-CUSA07237_00-FFVIIREMAKETRIAL" target="_blank" class="btn btn--main">Play The Demo</a>
             </div>
+        </div>
+
+        <!-- Waves -->
+        <div class="header__waves">
+            <div class="header__wave--1"></div>
+            <div class="header__wave--2"></div>
+            <div class="header__wave--3"></div>
+            <div class="header__wave--4"></div>
         </div>
     </header>
   
     <!-- STORY SECTION -->
     <section class="story-section" id="story">
-        <!-- <div class="row"> -->
-            <div class="story-content">
-                <h2 class="story-content__heading margin-bottom-small">
-                    Story
-                </h2>
-    
-                <div class="story-content__grid">
-                    <div class="story-content__text-box">
-                        <p class="story-content__text-box--text">
-                            Mako, the lifeblood of the planet and the fuel that powers the city of Midgar...
-                        </p>
-                        <p class="story-content__text-box--text">
-                            By exploiting this resource through their Mako Reactors, the Shinra Electric Power Company has all but seized control of the entire world. A ragtag group of idealists, known as Avalanche, are one of the last bastions of resistance.
-                        </p>
-                        <p class="story-content__text-box--text">
-                            Cloud Strife, a former member of Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, to destroy Mako Reactor 1 in the city of Midgar.
-                        </p>
-                        <p class="story-content__text-box--text">
-                            The bombing plunges the city into fiery chaos, and amidst the raging inferno, Cloud is tormented by visions of a bitter enemy long thought dead.
-                        </p>
-                        <p class="story-content__text-box--text">
-                            Once more begins a story that will shape the destiny of an entire world.
-                        </p>
-                    </div>
-                    <div class="story-content__empty">
-                        &nbsp;
-                    </div>
+        <div class="story-content">
+            <h2 class="story-content__heading margin-bottom-small">
+                Story
+            </h2>
+
+            <div class="story-content__grid">
+                <div class="story-content__text-box">
+                    <p class="story-content__text-box--text">
+                        Mako, the lifeblood of the planet and the fuel that powers the city of Midgar...
+                    </p>
+                    <p class="story-content__text-box--text">
+                        By exploiting this resource through their Mako Reactors, the Shinra Electric Power Company has all but seized control of the entire world. A ragtag group of idealists, known as Avalanche, are one of the last bastions of resistance.
+                    </p>
+                    <p class="story-content__text-box--text">
+                        Cloud Strife, a former member of Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, to destroy Mako Reactor 1 in the city of Midgar.
+                    </p>
+                    <p class="story-content__text-box--text">
+                        The bombing plunges the city into fiery chaos, and amidst the raging inferno, Cloud is tormented by visions of a bitter enemy long thought dead.
+                    </p>
+                    <p class="story-content__text-box--text">
+                        Once more begins a story that will shape the destiny of an entire world.
+                    </p>
+                </div>
+                <div class="story-content__empty">
+                    &nbsp;
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
     </section>
 
     <!-- TRAILER SECTION -->
-    <section class="trailer-section">
+    <section class="trailer-section" id="trailers">
         <div class="trailer">
             <div class="margin-bottom-medium">
                 <h2 class="secondary-heading text-center">
                     Trailers
                 </h2>
             </div>
-            <div class="trailer__grid">
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-8.jpg" data-src="https://www.youtube.com/embed/8IrheLf0Ki0?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">Final Fantasy VII Remake Opening Movie 2020</h3>
+            <!-- Current Trailer Displaying -->
+            <div class="trailer__container">
+                <iframe class="trailer__current" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <a class="trailer__prev">&#10094;</a>
+                <a class="trailer__next">&#10095;</a>
+            </div>
+
+            <!-- Trailer Materia -->
+            <div class="trailer__materia-container">
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/72Y7DplcyR8?rel=0" alt="materia" class="trailer__materia--img" id="1">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-7.jpg" data-src="https://www.youtube.com/embed/3alSpW18SnE?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">Final Fantasy VII Remake Theme Song 2020</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/KdxFyobNsHA?rel=0" alt="materia" class="trailer__materia--img" id="2">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-6.jpg" data-src="https://www.youtube.com/embed/tEPb8uQ27BI?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">Game Awards 2019</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/8IrheLf0Ki0?rel=0" alt="materia" class="trailer__materia--img" id="3">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-5.jpg" data-src="https://www.youtube.com/embed/GBpq_Jq7yn0?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">Tokyo Game Show 2019</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/3alSpW18SnE?rel=0" alt="materia" class="trailer__materia--img" id="4">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-4.jpg" data-src="https://www.youtube.com/embed/pCJZg7pVtiI?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">E3 2019</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/tEPb8uQ27BI?rel=0" alt="materia" class="trailer__materia--img" id="5">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-3.jpg" data-src="https://www.youtube.com/embed/aTCmN8TtkgQ?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">A Symphonic Reunion 2019</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/GBpq_Jq7yn0?rel=0" alt="materia" class="trailer__materia--img" id="6">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-2.jpg" data-src="https://www.youtube.com/embed/qOn2bWuA_0w?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading">State of Play 2019</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/pCJZg7pVtiI?rel=0" alt="materia" class="trailer__materia--img" id="7">
                 </div>
 
-                <div class="trailer__box">
-                    <img src="media/trailers/trailer-1.jpg" data-src="https://www.youtube.com/embed/Kznek1uNVsg?rel=0" alt="Trailer Screenshot" class="trailer__img">
-                    <h3 class="trailer__heading"> Reveal Trailer E3 2015</h3>
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/aTCmN8TtkgQ?rel=0" alt="materia" class="trailer__materia--img" id="8">
+                </div>
+
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/qOn2bWuA_0w?rel=0" alt="materia" class="trailer__materia--img" id="9">
+                </div>
+
+                <div class="trailer__materia">
+                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/Kznek1uNVsg?rel=0" alt="materia" class="trailer__materia--img" id="10">
                 </div>
             </div>
         </div>
@@ -185,7 +198,7 @@
 
     <!-- CHARACTERS SECTION -->
     <section class="character-section">
-        <div class="margin-bottom-medium" id="characters">
+        <div class="margin-bottom-big" id="characters">
             <h2 class="secondary-heading text-center">
                 Characters
             </h2>
@@ -197,7 +210,7 @@
                     <div class="character__info">
                         <h3 class="character__info--name">Cloud Strife</h3>
                         <p class="character__info--bio">
-                            The main character in Final Fantasy VII. Former member of SOLDIER, is now a mercenary who will take any job. He gradually gets caught up in a struggle for the life of the planet.
+                            Former member of SOLDIER, is now a mercenary who will take any job. He gradually gets caught up in a struggle for the life of the planet.
                         </p>
                     </div>
                 </div>
@@ -209,8 +222,7 @@
                     <div class="character__info">
                         <h3 class="character__info--name">Aerith Gainsborough</h3>
                         <p class="character__info--bio">
-                            Aerith lives in the Sector 5 slums, who first meets Cloud on the streets of Midgar. Shinra has kept a close eye on her ever since she was a child, as she has the ability to hear the voice of the planet.
-                        </p>
+                            A florist who lives in the Sector 5 slums. Shinra has kept a close eye on her ever since she was a child, as she has the ability to hear the voice of the planet.
                     </div>
                 </div>
             </div>
@@ -233,69 +245,17 @@
                     <div class="character__info">
                         <h3 class="character__info--name">Barret Wallace</h3>
                         <p class="character__info--bio">
-                            Leader of AVALANCHE, Barret is fighting against Shinra. Barret depends on brute strength and his "Gun-arm" to see him through. Currently lives with his daughter Marlene.
+                            Leader of AVALANCHE, Barret is fighting against Shinra. He and his comrades watch and keep the people safe including his daughter Marlene.
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- Second Row of Characters -->
-        <div class="character">
-            <!-- Sephiroth -->
-            <div class="character__box">
-                <div class="character__box--img-5">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Sephiroth</h3>
-                        <p class="character__info--bio">
-                            Sephiroth is the main antagonist of Final Fantasy VII. Sephiroth is a former SOLDIER. Learning of his true origins drove him insane, causing him to be driven by a desire to destroy the world.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reno -->
-            <div class="character__box">
-                <div class="character__box--img-6">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Reno</h3>
-                        <p class="character__info--bio">
-                            Reno is a prominent member of the Turks. Often accompanied by fellow Turk, Rude, Reno wields an Electro-Mag Rod in battle, a nightstick with a taser on one end.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rude -->
-            <div class="character__box">
-                <div class="character__box--img-7">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Rude</h3>
-                        <p class="character__info--bio">
-                            Rude is a member of the Turks. Rude is rarely seen without his long-time partner Reno and is taciturn, tending to relegate the talking to Reno. He prefers to use his fists in battle.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Nanaki -->
-            <div class="character__box">
-                <div class="character__box--img-8">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Red XIII</h3>
-                        <p class="character__info--bio">
-                            Red XIII is a beast that can talk as humans can. Imprisoned as an experiment sample by Shinra's Science Division, he has been categorized with a number rather than his real name.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+        </div>        
     </section>
 
     <!-- GALLERY SECTION -->
     <section class="gallery-section">
-        <div id="gallery">
+        <div class="margin-bottom-medium" id="gallery">
             <h2 class="secondary-heading text-center">
                 Gallery
             </h2>
@@ -305,24 +265,22 @@
 
     <!-- PURCHASE SECTION -->
     <section class="purchase-section" id="purchase">
-        <div class="margin-bottom-medium">
-            <h2 class="secondary-heading text-center">
-                Order Your Copy
-            </h2>
-        </div>
-
         <div class="purchase">
+            <div>
+                <h2 class="secondary-heading">
+                    Order Your Copy
+                </h2>
+            </div>
             <!-- Game Editions -->
             <div class="purchase__editions">
-                <a class="btn btn--editions" id="1">Standard Edition</a> 
-                <a class="btn btn--editions" id="2">Deluxe Edition</a> 
-                <a class="btn btn--editions" id="3">1st Class Edition</a> 
+                <a class="btn btn--editions scroll active" href="#standard">Standard Edition</a> 
+                <a class="btn btn--editions scroll" href="#deluxe">Deluxe Edition</a> 
+                <a class="btn btn--editions scroll" href="#firstClass">1st Class Edition</a> 
             </div>
 
             <div class="purchase-box">
                 <!-- Standard Edition -->
-                <div class="purchase-box__edition fadeIn">
-                    <h3 class="purchase-box__heading">Standard Edition</h3>
+                <div class="purchase-box__edition fadeIn active" id="standard">
                     <div class="purchase-box__grid">
                         <div class="purchase-box__product">
                             <img class="purchase-box__product--img" src="media/preorder/1.jpg" alt="Standard Edition">
@@ -337,16 +295,13 @@
                                 <li class="purchase-box__item">Reversible Cover</li>
                                 <li class="purchase-box__item">Chocobo Chick Summon Materia</li>
                             </ul>
-                            <div class="purchase-box__button">
-                                <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                            </div>
+                            <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Deluxe Edition -->
-                <div class="purchase-box__edition fadeIn">
-                    <h3 class="purchase-box__heading">Deluxe Edition</h3>
+                <div class="purchase-box__edition fadeIn" id="deluxe">
                     <div class="purchase-box__grid">
                         <div class="purchase-box__product">
                             <img class="purchase-box__product--img" src="media/preorder/2.jpg" alt="Deluxe Edition">
@@ -370,8 +325,7 @@
                 </div>
 
                 <!-- 1st Class Edition -->
-                <div class="purchase-box__edition fadeIn">
-                    <h3 class="purchase-box__heading">1st Class Edition</h3>
+                <div class="purchase-box__edition fadeIn" id="firstClass">
                     <div class="purchase-box__grid">
                         <div class="purchase-box__product">
                             <img class="purchase-box__product--img" src="media/preorder/3.jpg" alt="1st Class Edition">
@@ -413,7 +367,7 @@
             </div> -->
             <p class="footer__text">
                 &copy; 2020 Site Designed & Developed by 
-                <a href="http://torralbajose.com/" target="_blank" class="footer__text-link scroll">Jose Torralba</a>
+                <a href="https://torralbajose.com/" target="_blank" class="footer__text-link">Jose Torralba</a>
             </p>
         </div>
     </footer>

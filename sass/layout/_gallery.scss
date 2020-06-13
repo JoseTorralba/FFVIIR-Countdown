@@ -4,15 +4,18 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
-    padding: 0 6rem;
+    max-width: 114rem;
+    margin: 0 auto;
 
-    @include respond(phone) { 
-        grid-template-columns: repeat(2, 1fr);
+    @include respond(tablet-mid) { 
         padding: 0 2rem;
     }
 
+    @include respond(phone) { 
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     &__container {
-        // background-color: #000;
         border-radius: 3px;
         overflow: hidden;
         position: relative;
@@ -21,7 +24,7 @@
         transition: all .3s;
         
         &:hover {
-            border: 2px solid #01bc67;
+            border: 2px solid $primary-color;
         }
     }
 

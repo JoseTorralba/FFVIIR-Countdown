@@ -9,19 +9,25 @@
 
     &--main {
         color: #fff;
-        border: none;
-        border-bottom: 2px solid $primary-color;
-        font-size: 2rem;
+        border: 2px solid $primary-color;
+        border-radius: 5rem;
+        font-size: 1.5rem;
         font-weight: 700;
         margin-top: 3rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        text-shadow: 0px 2px 4px #000;
         transition: all .3s;
+        padding: .8rem 3rem;
+
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
 
         &:hover {
             background-color: $primary-color;
             border-radius: 5rem;
-            padding: 1rem 4rem;
+            padding: .8rem 3rem;
             text-shadow: 0px 5px 10px #000;
         }
 
@@ -30,6 +36,20 @@
             border-radius: 5rem;
             padding: 1rem 4rem;
             text-shadow: 0px 5px 10px #000;
+        }
+
+        @include respond(phone) {
+            width: 70%;
+            display: block;
+            text-shadow: 0px 2px 4px #000;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+
+        &-active {
+            background-color: $primary-color;
         }
     }
 
@@ -43,15 +63,17 @@
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: 2rem;
-        padding: 1rem 3rem;
-        text-shadow: 0px 5px 10px #000;
+        padding: 1rem 2.5rem;
+        text-transform: capitalize !important;
+        text-shadow: 0px 2px 4px #000;
         transition: all .2s;
      
         &:not(:last-child) {
             margin-right: 1.5rem;
-        }
+        }        
 
         @include respond(phone) {
+            width: 100%;
             display: block;
 
             &:not(:last-child) {
@@ -69,18 +91,19 @@
         font-weight: 600;
         padding: 1rem 3rem;
         margin-top: 2rem;
-        text-shadow: 0px 5px 10px #000;
+        text-shadow: 0px 2px 4px #000;
         transition: all .3s;
         display: block !important;
         text-align: center;
-     
+
         &:hover {
-            transform: translateY(-.3rem)
+            text-shadow: 0px 5px 10px #000;
+            transform: translateY(-.1rem)
         }
     }
 }
 
-.active, .btn--editions:hover {
+.btn--editions:hover, .active {
     background-color: #000;
     border: 2px solid $primary-color;
 }

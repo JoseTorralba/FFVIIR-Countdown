@@ -10,10 +10,6 @@
 .margin-bottom-big { margin-bottom: 6rem; }
 .margin-bottom-huge { margin-bottom: 10rem; }
 
-.character-spacing {
-    margin-top: -2.4rem;
-}
-
 .row {
     max-width: 114rem;
     margin: 0 auto;
@@ -27,4 +23,8 @@
 .fadeIn {
     animation-name: fadeIn;
     animation-duration: 1s;
+}
+
+.active-materia {
+    filter: drop-shadow(2px 2px 2px $primary-color-dark);
 }

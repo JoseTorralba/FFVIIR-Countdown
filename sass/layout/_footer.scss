@@ -28,9 +28,9 @@
         font-size: 1.4rem;
 
         &-link {
-            color: #01bc67;
+            color: $primary-color-light;
             text-decoration: none;
-            transition: all .3s;
+            transition: all .2s;
 
             &:hover {
                 color: #fff;

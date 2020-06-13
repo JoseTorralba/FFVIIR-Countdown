@@ -1,5 +1,4 @@
 .character {
-    // padding: 0 6rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     
@@ -7,10 +6,7 @@
     @include respond(tablet-landscape) { 
         @include removeSkewY;
         grid-template-columns: repeat(2, 1fr);
-
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
+        &:not(:last-child) { margin-bottom: 2rem; }
     }
 
     @include respond(phone) {
@@ -31,16 +27,11 @@
             clip-path: none;
         }
 
-
         &--img {
             &-1,
             &-2,
             &-3,
-            &-4,
-            &-5,
-            &-6,
-            &-7,
-            &-8 {
+            &-4{
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -53,79 +44,21 @@
                     transform: scale(1);
                 }
 
-                @include respond(phone) { 
-                    height: 65rem;
-                }
-
-                @include respond(smaller-phone) { 
-                    height: 50rem;
-                }
-
+                @include respond(phone) { height: 65rem; }
+                @include respond(smaller-phone) { height: 50rem; }
 
                 &:hover {
+                    filter: drop-shadow(1.5px 1.5px 1.5px $primary-color-dark);
                     transform: scale(1.05);
                 }
 
-                &:hover .character__info{
-                    top: 35rem;
-                }
+                &:hover .character__info{ top: 37rem; }
             }
-
-            &-1 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/cloud.jpg);
-            }
-    
-            &-2 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/aerith.jpg);
-            }
-    
-            &-3 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/tifa.jpg);
-            }
-    
-            &-4 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/barret.jpg);
-            }
-
-            &-5 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/sephiroth.jpg);
-            }
-
-            &-6 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/reno.jpg);
-            }
-
-            &-7 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/rude.jpg);
-            }
-
-            &-8 {
-                background-image: linear-gradient(
-                    rgba(0, 0, 0, 0),
-                    rgba(0, 0, 0, .5)),
-                url(../media/characters/redxiii.jpg);
-            }
+            
+            &-1 { @include backgroundImage(to bottom, 0, .7,'../media/characters/cloud.png'); }
+            &-2 { @include backgroundImage(to bottom, 0, .7,'../media/characters/aerith.png'); }
+            &-3 { @include backgroundImage(to bottom, 0, .7,'../media/characters/tifa.png'); }
+            &-4 { @include backgroundImage(to bottom, 0, .7,'../media/characters/barret.png'); }
         }
     }
 
@@ -138,7 +71,7 @@
         transition:  all .3s;
 
         @include respond(tablet-landscape) { 
-            top: 29rem;
+            top: 34rem;
             height: 22rem;
         }
 

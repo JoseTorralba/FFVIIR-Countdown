@@ -1,18 +1,27 @@
 .purchase {
     @include addWidth;
 
-    // Editions
     &__editions {
         margin-top: 1rem;
         margin-bottom: 3rem;
 
-        @include respond(tablet-mid) {
+        @include respond(tablet-portrait) {
             text-align: center;
         }
     }
 
     &-box {
         margin: 0 auto;
+
+        &__edition { 
+            display: none; 
+        }
+        
+        &__edition.active { 
+            display: block;
+            border: none !important;
+            background-color: transparent !important;
+        }
 
         &__grid {
             display: grid;
@@ -28,20 +37,16 @@
             font-size: 2.4rem;
         }
 
-        &__product {
-
-            &--img {
-                width: 100%;
-            }
+        &__product--img {
+            width: 100%;
         }
 
         &__desc {
-
+            background-color: none;
         }
 
         &__text {
             font-size: 1.7rem;
-
 
             &:not(:last-child) {
                 margin-bottom: 2rem;
@@ -56,13 +61,6 @@
         &__list {
             font-size: 1.4rem;
             list-style: none;
-        }
-
-        &__button {
-            
-            @include respond(tablet-mid) {
-                // text-align: center;
-            }
         }
     }
 }

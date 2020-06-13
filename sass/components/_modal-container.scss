@@ -1,7 +1,7 @@
 // MODAL CONTAINER
 .modal {
     animation-name: fadeIn;
-    animation-duration: 1s;
+    animation-duration: .5s;
     background-color:rgba(0,0,0,0.8);
     display: none;
     position: fixed;
@@ -10,93 +10,49 @@
     z-index: 10000000;
     
     &__toggle {
-        font-size: 3.8rem;
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-
-        @include respond(phone) {
-            top: 1rem;
-        }
+        background-color: $primary-color;
+        font-size: 2.5rem;
+        padding: 0 1rem;
+        position: absolute;
+        right: 0;
 
         &--icon {
             color: #fff;
-            text-shadow: 0px 5px 10px #000;
-            transition: all .3s;
+            text-shadow: 0px 2px 4px #000;
+            transition: all .2s;
 
             &:hover {
-                color: $primary-color;
                 cursor: pointer;
+                text-shadow: 0px 5px 10px #000;
             }
         }
     }
 
     &__content {
-        border: 2px solid #01bc67;
+        border: 3px solid $primary-color;
         background-color: #000;
-        margin: 0 auto;
         display: block;
         position: absolute;
         top: 50%;
         left: 50%;
+        margin: 0 auto;
         transform: translate(-50%, -50%);
-        width: 100% !important;
+        width: 80% !important;
         height: auto !important;
+
+        @include respond(tablet-portrait) {
+            width: 95% !important;
+        }
     }
 
     &__img {
-        width: 90% !important;
+        width: 100% !important;
         height: auto !important;
         margin: 0 auto;
         display: block;
 
         @include respond(tablet-portrait) {
             width: 100% !important;
-        }
-    }
-
-    &__vid {
-        display: block;
-        margin: 0 auto;
-        width: 90% !important;
-        height: 90vh !important;
-
-        @include respond(phone) {
-            height: 40vh !important;
-        }
-    }
-}
-
-.modal-toggle {
-    display: none;
-    
-    &--position {
-        color: #fff;
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-        padding: 1rem;
-        z-index: 10000001;
-
-        @include respond(tablet-portrait) {
-            top: 3rem;
-            right: 1rem;
-        }
-
-        @include respond(phone) {
-            top: 12rem;
-            right: 0;
-        }
-    }
-
-    &--icon {
-        cursor: pointer;
-        font-size: 3.8rem;
-        text-shadow: 0px 3px 10px rgb(15, 15, 15);
-        transition: all .3s;
-
-        &:hover {
-            color: #01bc67;
         }
     }
 }

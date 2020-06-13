@@ -5,57 +5,126 @@
     background-size: cover;
     height: 100vh;
     position: relative;
-    width: 100%;
 
     @include respond(phone) {
-        @include backgroundImage(to bottom, 0, .6,'../media/background/header-mobile.jpg');
+        @include backgroundImage(to bottom, .2, 1,'../media/background/header-mobile.jpg');
         background-attachment: scroll;
     }
 
-    &-container {
+    &__text-box {
         position: absolute;
         top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
-        text-align: center;
+        width: 114rem;
 
-
-        &__text-box {
-            margin-bottom: 2rem;
+        @include respond(tablet-mid) {
+            width: 100%;
+            padding: 0 4%;
         }
 
-        &__img {
-            width: 65%;
+        @include respond(phone) {
+            text-align: center;
+            padding: 0 10%;
+        }
+    }
+
+    &__img-box {
+        width: 500px;
+
+        @include respond(tablet-portrait) {
+            width: 400px;
         }
 
-        &__countdown {
-            display: grid;
+        @include respond(phone) {
+            width: 100%;
+            padding: 0 4%;
+        }
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__availability {
+        display: none;
+    }
+
+    &__countdown {
+        display: grid;
+        grid-template-columns: repeat(4, 100px);
+        padding-top: 2rem;
+
+        @include respond(phone) {
             grid-template-columns: repeat(4, 1fr);
-            grid-gap: 3rem;
         }
+    }
 
-        &__countdown-box {
+    &__countdown-box {
+        margin-bottom: 2rem;
 
-            &--1 {
-                font-size: 5rem;
-                display: block;
-                @include respond(smaller-phone) {
-                    font-size: 4rem;
-                }
-            }
-
-            &--2 {
-                display: block;
-                color: #01bc67;
-                font-size: 3rem;
-                font-weight: 700;
-                letter-spacing: 3px;
-                text-shadow: 0px 5px 10px #000;
-
-                @include respond(smaller-phone) {
-                    font-size: 2.5rem;
-                }
+        &--1 {
+            font-size: 3.5rem;
+            display: block;
+            @include respond(smaller-phone) {
+                font-size: 4rem;
             }
         }
+
+        &--2 {
+            display: block;
+            color: $primary-color;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 0px 5px 10px #000;
+
+            @include respond(smaller-phone) {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    &__waves {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &__wave--1,
+    &__wave--2,
+    &__wave--3,
+    &__wave--4 {
+        animation: waveAnimation 30s linear infinite;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+    }
+
+    &__wave--2,
+    &__wave--3 {
+        animation-direction: reverse;
+    }
+    
+    &__wave--1 {
+        background: url(../../media/assets/wave-2.svg);
+        opacity: .1;
+    }
+    
+    &__wave--2 {
+        background: url(../../media/assets/wave-2.svg);
+        opacity: .2;
+    }
+    
+    &__wave--3 {
+        background: url(../../media/assets/wave-1.svg);
+        opacity: .1;
+    }
+    
+    &__wave--4 {
+        background: url(../../media/assets/wave-1.svg);
+        opacity: .2;
     }
 }

@@ -1,8 +1,7 @@
 .story-content {
     padding: 0 2rem;
-        
-    max-width: 114rem;
     margin: 0 auto;
+    max-width: 114rem;
 
     @include respond(phone) {
         max-width: 50rem; 
