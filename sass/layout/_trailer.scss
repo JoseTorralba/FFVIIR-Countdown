@@ -39,6 +39,10 @@
         transform: translate(0, -50%);
         transition: 0.2s;
         user-select: none;
+
+        @include respond(smaller-phone) {
+            display: none;
+        }
     }
 
     &__next {
@@ -49,7 +53,6 @@
     &__prev {
         border-radius: 3px 0 0 3px;
     }
-
 
     &__prev:hover, &__next:hover {
         color: $primary-color-light;
@@ -64,7 +67,7 @@
         display: inline-block;
 
         &:not(:last-child) {
-            margin-right: .5rem;
+            margin-right: .8rem;
         }
 
         &--img {
