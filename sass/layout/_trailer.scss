@@ -1,20 +1,17 @@
 .trailer {
     margin: 0 auto;
-    max-width: 80rem;
+    max-width: 90rem;
 
-    @include respond(phone) {
-        max-width: 70rem;
-    }
+    @include respond(phone) { max-width: 70rem; }
 
-    @include respond(phone) {
-        max-width: 50rem;
-    }
+    @include respond(smaller-phone) { max-width: 50rem; }
 
     &__container {
         display: block; 
         padding-bottom: 56.25%; 
+        margin-bottom: 3rem;
         position: relative; 
-        width: 100%
+        width: 100%;
     }
 
     &__current {
@@ -23,62 +20,5 @@
         left: 0;
         width: 100%; 
         height: 100%;
-    }
-
-    &__prev, &__next {
-        background-color: rgba(0,0,0,0.8);
-        border: 2px solid $primary-color-dark;
-        border-radius: 0 3px 3px 0;
-        color: white;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 16px;
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-        transition: 0.2s;
-        user-select: none;
-
-        @include respond(smaller-phone) {
-            display: none;
-        }
-    }
-
-    &__next {
-        border-radius: 3px 0 0 3px;
-        right: 0;
-    }
-
-    &__prev {
-        border-radius: 3px 0 0 3px;
-    }
-
-    &__prev:hover, &__next:hover {
-        color: $primary-color-light;
-    }
-
-    &__materia-container {
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    &__materia {
-        display: inline-block;
-
-        &:not(:last-child) {
-            margin-right: .8rem;
-        }
-
-        &--img {
-            height: 25px;
-            width: 25px;
-            transition: all .2s;
-
-            &:hover {
-                cursor: pointer;
-                filter: drop-shadow(2px 2px 2px $primary-color-dark);
-            }
-        }
     }
 }

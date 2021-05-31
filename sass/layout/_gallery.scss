@@ -1,5 +1,4 @@
 .gallery {
-    margin-top: 6rem;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -32,7 +31,7 @@
         display: block;
         transform: scale(1.10);
         transition: all .3s;
-        opacity: 0.7;
+        opacity: 0.8;
         overflow: hidden;
         width: 100%;
 

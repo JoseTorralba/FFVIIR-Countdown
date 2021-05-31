@@ -1,8 +1,9 @@
 section {
     padding: 6rem 0;
     background-color: #000 !important;
-    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     @include respond(tablet-portrait) {
         background-attachment: scroll !important;
     }
@@ -12,27 +13,14 @@ section {
 .story-section {
     @include backgroundImage(to left, 0, 1,'../media/background/story.jpg');
     background-attachment: fixed;
-    background-position: center;
-    position: relative;
-    z-index: 2000;
-
-    @include respond(tablet-landscape) {
-        background-position: top;
-    }
 
     @include respond(tablet-portrait) {
-        @include backgroundImage(to bottom, .2, 1,'../media/background/story.jpg');
-        background-position: right;
-    }
-
-    @include respond(phone) {
-        background-position: center;
+        @include backgroundImage(to bottom, .2, 1, '../media/background/story.jpg');
     }
 }
 
 .trailer-section {
     @include backgroundImage(to bottom, .2, 1,'../media/background/trailer.jpg');
-    background-position: center;
 }
 
 .character-section {
@@ -41,29 +29,13 @@ section {
 
 // GALLERY SECTION
 .gallery-section {
-    color: #fff;
-    margin-top: -8rem;
-    padding: 6rem 0 14rem;
-    position: relative;
-
     @include addSkewY;
-    @include respond(tablet-landscape) { 
-        @include removeSkewY;
-        margin-top: -6rem;
-    }
+    @include respond(tablet-landscape) { @include removeSkewY; }
 }
 
 // PURCHASE SECTION
 .purchase-section {
-    
     @include backgroundImage(to bottom, .2, 1,'../media/background/purchase.jpg');
     background-attachment: fixed;
-    background-position: top;
     position: relative;
-    margin-top: -6rem;
-
-    @include respond(phone) { 
-        background-position: right;
-        background-size: cover;
-    }
 }

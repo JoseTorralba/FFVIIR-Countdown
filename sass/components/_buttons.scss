@@ -3,22 +3,28 @@
     &:link,
     &:visited {
         display: inline-block;
-        text-transform: uppercase;
         text-decoration: none;
     }
 
-    &--main {
-        color: #fff;
-        border: 2px solid $primary-color;
-        border-radius: 5rem;
+    &--main,
+    &--sub,
+    &--editions,
+    &--purchase {
+        color: #fff !important;
+        cursor: pointer;
         font-size: 1.5rem;
-        font-weight: 700;
-        margin-top: 3rem;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        font-weight: 600;
         text-shadow: 0px 2px 4px #000;
-        transition: all .3s;
-        padding: .8rem 3rem;
+        transition: all .2s;
+    }
+
+
+    &--main,
+    &--sub {
+        border: 2px solid $primary-color !important;
+        border-radius: 5rem;
+        margin-top: 3rem;
+        padding: .6rem 3.5rem;
 
         &:not(:last-child) {
             margin-right: 3rem;
@@ -26,8 +32,6 @@
 
         &:hover {
             background-color: $primary-color;
-            border-radius: 5rem;
-            padding: .8rem 3rem;
             text-shadow: 0px 5px 10px #000;
         }
 
@@ -40,45 +44,56 @@
 
         @include respond(phone) {
             width: 70%;
-            display: block;
+            display: inline-block;
             text-shadow: 0px 2px 4px #000;
 
             &:not(:last-child) {
                 margin-right: 0;
             }
         }
-
-        &-active {
-            background-color: $primary-color;
-        }
     }
+
+    &--main {
+        background-color: $primary-color !important;
+    }
+
+
 
     &--editions {
         background-color: $primary-color;
-        border: 2px solid transparent;
-        border-radius: 2px;
-        color: #fff;
-        cursor: pointer;
-        display: inline-block;
-        font-size: 1.5rem;
-        font-weight: 600;
+        border: none;
+        border-radius: .5rem .5rem 0 0;
         margin-top: 2rem;
+        margin-bottom: 3rem;
         padding: 1rem 2.5rem;
-        text-transform: capitalize !important;
-        text-shadow: 0px 2px 4px #000;
-        transition: all .2s;
-     
+        padding-bottom: 2rem;
+        // z-index: -10;
+
         &:not(:last-child) {
             margin-right: 1.5rem;
-        }        
+        }
 
-        @include respond(phone) {
+        &:hover {
+            transform: translateY(-.5rem);
+        }
+
+        @include respond(tablet-portrait) {
+            border-radius: .2rem;
+            padding: 1.6rem;
+            margin: 0;
             width: 100%;
             display: block;
 
-            &:not(:last-child) {
-                margin-right: 0;
-                margin-bottom: 1rem;
+            &:hover {
+                transform: translateY(0);
+            }
+        }
+
+        &-active {
+            background-color: rgb(20, 20, 20);
+
+            &:hover {
+                transform: translateY(0);
             }
         }
     }
@@ -86,24 +101,14 @@
     &--purchase {
         background-color: $primary-color;
         border-radius: 3px;
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: 600;
         padding: 1rem 3rem;
         margin-top: 2rem;
-        text-shadow: 0px 2px 4px #000;
-        transition: all .3s;
-        display: block !important;
         text-align: center;
+        width: 100%;
 
         &:hover {
             text-shadow: 0px 5px 10px #000;
             transform: translateY(-.1rem)
         }
     }
-}
-
-.btn--editions:hover, .active {
-    background-color: #000;
-    border: 2px solid $primary-color;
 }

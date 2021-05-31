@@ -1,4 +1,4 @@
-.story-content {
+.story {
     padding: 0 2rem;
     margin: 0 auto;
     max-width: 114rem;
@@ -26,26 +26,26 @@
         }
     }
 
-    &__text-box {
+    &__content {
         padding-right: 4rem;
-
-        &--text {
-            font-size: 1.7rem;
-            text-align: left;
-    
-            &:not(:last-child) {
-                margin-bottom: 3rem;
-            }
-    
-            @include respond(phone) {
-                text-align: left;
-            }
-        }
-
         @include respond(tablet-portrait) {
             background-color: rgba(0, 0, 0, 0.699);
             border-radius: 3px;
             padding: 2rem;
+        }
+    }
+
+
+    &__text {
+        font-size: 1.7rem;
+        text-align: left;
+
+        &:not(:last-child) {
+            margin-bottom: 3rem;
+        }
+
+        @include respond(phone) {
+            text-align: left;
         }
     }
 

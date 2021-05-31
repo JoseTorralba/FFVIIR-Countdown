@@ -13,44 +13,32 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
-    <!-- Modal -->
-    <div class="modal">
-        <div class="modal__content">
-            <div class="modal__toggle">
-                <i class="modal__toggle--icon fas fa-times" aria-hidden="true"></i>
-            </div>
-            <div class="modal__media"></div>
-        </div>
-    </div>
 
     <!-- Navigation -->
     <div class="navigation">
         <div class="navigation__button">
-            &nbsp;
+            <i class="fas fa-bars navigation__button--toggle" aria-hidden="true"></i>
         </div>
+
         <nav class="navigation__background">
             <ul class="navigation__list">
                 <li class="navigation__item">
-                    <a href="#story" class="navigation__link scroll">Story</a>
+                    <a href="#story" class="navigation__link">Story</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#trailers" class="navigation__link scroll">Trailers</a>
+                    <a href="#trailers" class="navigation__link">Trailers</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#characters" class="navigation__link scroll">Characters</a>
+                    <a href="#characters" class="navigation__link">Characters</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#gallery" class="navigation__link scroll">Gallery</a>
+                    <a href="#gallery" class="navigation__link">Gallery</a>
                 </li>
                 <li class="navigation__item">
-                    <a href="#purchase" class="navigation__link scroll" id="availability">Pre-Order</a>
+                    <a href="#purchase" class="navigation__link" id="availability">Pre-Order</a>
                 </li>
             </ul>
         </nav>
-    </div>
-    <!-- Navigation Toggle -->
-    <div class="navigation__toggle">
-        <i class="fas fa-bars navigation__toggle--icon" aria-hidden="true"></i>
     </div>
 
     <!-- HEADER -->
@@ -88,9 +76,9 @@
             </div>
 
             <!-- Purchase Button -->
-            <div>
-                <a href="#purchase" class="btn btn--main btn btn--main-active scroll" id="availability">Pre-order</a>
-                <a href="https://store.playstation.com/en-us/product/UP0082-CUSA07237_00-FFVIIREMAKETRIAL" target="_blank" class="btn btn--main">Play The Demo</a>
+            <div class="header__buttons">
+                <a href="#purchase" class="btn btn--main" id="availability">Pre-order</a>
+                <a href="https://store.playstation.com/en-us/product/UP0082-CUSA07237_00-FFVIIREMAKETRIAL" target="_blank" class="btn btn--sub">Play The Demo</a>
             </div>
         </div>
 
@@ -105,30 +93,31 @@
   
     <!-- STORY SECTION -->
     <section class="story-section" id="story">
-        <div class="story-content">
-            <h2 class="story-content__heading margin-bottom-small">
+
+        <div class="story">
+            <h2 class="story__heading margin-bottom-small">
                 Story
             </h2>
 
-            <div class="story-content__grid">
-                <div class="story-content__text-box">
-                    <p class="story-content__text-box--text">
+            <div class="story__grid">
+                <div class="story__content">
+                    <p class="story__text">
                         Mako, the lifeblood of the planet and the fuel that powers the city of Midgar...
                     </p>
-                    <p class="story-content__text-box--text">
+                    <p class="story__text">
                         By exploiting this resource through their Mako Reactors, the Shinra Electric Power Company has all but seized control of the entire world. A ragtag group of idealists, known as Avalanche, are one of the last bastions of resistance.
                     </p>
-                    <p class="story-content__text-box--text">
+                    <p class="story__text">
                         Cloud Strife, a former member of Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, to destroy Mako Reactor 1 in the city of Midgar.
                     </p>
-                    <p class="story-content__text-box--text">
+                    <p class="story__text">
                         The bombing plunges the city into fiery chaos, and amidst the raging inferno, Cloud is tormented by visions of a bitter enemy long thought dead.
                     </p>
-                    <p class="story-content__text-box--text">
+                    <p class="story__text">
                         Once more begins a story that will shape the destiny of an entire world.
                     </p>
                 </div>
-                <div class="story-content__empty">
+                <div class="story__empty">
                     &nbsp;
                 </div>
             </div>
@@ -137,72 +126,34 @@
 
     <!-- TRAILER SECTION -->
     <section class="trailer-section" id="trailers">
-        <div class="trailer">
-            <div class="margin-bottom-medium">
-                <h2 class="secondary-heading text-center">
-                    Trailers
-                </h2>
-            </div>
+        <div class="margin-bottom-medium">
+            <h2 class="secondary-heading text-center">
+                Trailers
+            </h2>
+        </div>
 
+        <div class="trailer">
             <!-- Current Trailer Displaying -->
             <div class="trailer__container">
                 <iframe class="trailer__current" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <a class="trailer__prev">&#10094;</a>
-                <a class="trailer__next">&#10095;</a>
             </div>
 
-            <!-- Trailer Materia -->
-            <div class="trailer__materia-container">
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/72Y7DplcyR8?rel=0" alt="materia" class="trailer__materia--img" id="1">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/KdxFyobNsHA?rel=0" alt="materia" class="trailer__materia--img" id="2">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/8IrheLf0Ki0?rel=0" alt="materia" class="trailer__materia--img" id="3">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/3alSpW18SnE?rel=0" alt="materia" class="trailer__materia--img" id="4">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/tEPb8uQ27BI?rel=0" alt="materia" class="trailer__materia--img" id="5">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/GBpq_Jq7yn0?rel=0" alt="materia" class="trailer__materia--img" id="6">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/pCJZg7pVtiI?rel=0" alt="materia" class="trailer__materia--img" id="7">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/aTCmN8TtkgQ?rel=0" alt="materia" class="trailer__materia--img" id="8">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/qOn2bWuA_0w?rel=0" alt="materia" class="trailer__materia--img" id="9">
-                </div>
-
-                <div class="trailer__materia">
-                    <img src="media/assets/materia.png" data-src="https://www.youtube.com/embed/Kznek1uNVsg?rel=0" alt="materia" class="trailer__materia--img" id="10">
-                </div>
+            <!-- Dots -->
+            <div class="dots">
+                <a class="dots__prev">&#10094;</a>
+                <a class="dots__next">&#10095;</a>
             </div>
         </div>
     </section>
 
     <!-- CHARACTERS SECTION -->
-    <section class="character-section">
-        <div class="margin-bottom-big" id="characters">
+    <section class="character-section" id="characters">
+        <div class="margin-bottom-big">
             <h2 class="secondary-heading text-center">
                 Characters
             </h2>
         </div>
+
         <div class="character">
             <!-- Cloud -->
             <div class="character__box">
@@ -254,8 +205,8 @@
     </section>
 
     <!-- GALLERY SECTION -->
-    <section class="gallery-section">
-        <div class="margin-bottom-medium" id="gallery">
+    <section class="gallery-section" id="gallery">
+        <div class="margin-bottom-huge">
             <h2 class="secondary-heading text-center">
                 Gallery
             </h2>
@@ -266,88 +217,101 @@
     <!-- PURCHASE SECTION -->
     <section class="purchase-section" id="purchase">
         <div class="purchase">
-            <div>
+            <div class="margin-bottom-medium">
                 <h2 class="secondary-heading">
                     Order Your Copy
                 </h2>
             </div>
+
             <!-- Game Editions -->
             <div class="purchase__editions">
-                <a class="btn btn--editions scroll active" href="#standard">Standard Edition</a> 
-                <a class="btn btn--editions scroll" href="#deluxe">Deluxe Edition</a> 
-                <a class="btn btn--editions scroll" href="#firstClass">1st Class Edition</a> 
+                <button class="btn btn--editions btn--editions-active" data-tab="1">PS5 | Standard Edition</button>
+                <button class="btn btn--editions" data-tab="2">PS4 | Standard Edition</button>
+                <button class="btn btn--editions" data-tab="3">PS4 | Deluxe Edition</button>
+                <button class="btn btn--editions" data-tab="4">PS4 | 1st Class Edition</button>
             </div>
 
-            <div class="purchase-box">
-                <!-- Standard Edition -->
-                <div class="purchase-box__edition fadeIn active" id="standard">
-                    <div class="purchase-box__grid">
-                        <div class="purchase-box__product">
-                            <img class="purchase-box__product--img" src="media/preorder/1.jpg" alt="Standard Edition">
-                        </div>
-                        <div class="purchase-box__desc">
-                            <p class="purchase-box__text">
-                                A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
-                            </p>
-                            <h3 class="purchase-box__sub-heading">Standard Edition Includes:</h3>
-                            <ul class="purchase-box__list">
-                                <li class="purchase-box__item">Final Fantasy VII Remake</li>
-                                <li class="purchase-box__item">Reversible Cover</li>
-                                <li class="purchase-box__item">Chocobo Chick Summon Materia</li>
-                            </ul>
-                            <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                        </div>
-                    </div>
+            <!-- PS5 Standard Edition -->
+            <div class="purchase__content purchase__content--1 purchase__content--active">
+                <div class="purchase__product">
+                    <img class="purchase__product--img" src="media/preorder/1.jpg" alt="Standard Edition">
                 </div>
-
-                <!-- Deluxe Edition -->
-                <div class="purchase-box__edition fadeIn" id="deluxe">
-                    <div class="purchase-box__grid">
-                        <div class="purchase-box__product">
-                            <img class="purchase-box__product--img" src="media/preorder/2.jpg" alt="Deluxe Edition">
-                        </div>
-                        <div class="purchase-box__desc">
-                            <p class="purchase-box__text">
-                                A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
-                            </p>
-                            <h3 class="purchase-box__sub-heading">Deluxe Edition Includes:</h3>
-                            <ul class="purchase-box__list">
-                                <li class="purchase-box__item">Final Fantasy VII Remake</li>
-                                <li class="purchase-box__item">Artbook</li>
-                                <li class="purchase-box__item">Mini-Soundtrack</li>
-                                <li class="purchase-box__item">Steelbook</li>
-                                <li class="purchase-box__item">Cactuar Summon Materia</li>
-                                <li class="purchase-box__item">Chocobo Chick Summon Materia</li>
-                            </ul>
-                            <a href="https://store.na.square-enix-games.com/en_US/product/562667/final-fantasy-vii-remake-deluxe-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                        </div>
-                    </div>
+                <div class="purchase__description">
+                    <p class="purchase__text">
+                        FINAL FANTASY VII REMAKE INTERGRADE includes a wealth of graphical, gameplay and system enhancements.
+                        Immerse yourself in the city of Midgar like never before, with improved textures, lighting, and background environments.
+                    </p>
+                    <h3 class="purchase__edition-header">PS5 Standard Edition Includes:</h3>
+                    <ul class="purchase__list">
+                        <li class="purchase__item">Final Fantasy VII Remake Intergrade</li>
+                        <li class="purchase__item">Reversible Cover</li>
+                        <li class="purchase__item">New Episode Featuring Yuffie Kisaragi</li>
+                    </ul>
+                    <a href="https://store.na.square-enix-games.com/en_US/product/629902/final-fantasy-vii-remake-intergrade-ps5" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
                 </div>
+            </div>
 
-                <!-- 1st Class Edition -->
-                <div class="purchase-box__edition fadeIn" id="firstClass">
-                    <div class="purchase-box__grid">
-                        <div class="purchase-box__product">
-                            <img class="purchase-box__product--img" src="media/preorder/3.jpg" alt="1st Class Edition">
-                        </div>
-                        <div class="purchase-box__desc">
-                            <p class="purchase-box__text">
-                                This limited-quantity, large-format action figure set is the only way you can get both Cloud and the Hardy-Daytona together.
-                            </p>
-                            <h3 class="purchase-box__sub-heading">1st Class Edition Includes:</h3>
-                            <ul class="purchase-box__list">
-                                <li class="purchase-box__item">Final Fantasy VII Remake</li>
-                                <li class="purchase-box__item">Play Arts Kai Cloud Strife & Hardy Daytona</li>
-                                <li class="purchase-box__item">Artbook</li>
-                                <li class="purchase-box__item">Mini-Soundtrack</li>
-                                <li class="purchase-box__item">Steelbook</li>
-                                <li class="purchase-box__item">Carbuncle Summon Materia</li>
-                                <li class="purchase-box__item">Cactuar Summon Materia</li>
-                                <li class="purchase-box__item">Chocobo Chick Summon Materia</li>
-                            </ul>
-                            <a href="https://store.na.square-enix-games.com/en_US/product/562671/final-fantasy-vii-remake-1st-class-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                        </div>
-                    </div>
+            <!-- PS4 Standard Edition -->
+            <div class="purchase__content purchase__content--2">
+                <div class="purchase__product">
+                    <img class="purchase__product--img" src="media/preorder/2.jpg" alt="Standard Edition">
+                </div>
+                <div class="purchase__description">
+                    <p class="purchase__text">
+                        A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
+                    </p>
+                    <h3 class="purchase__edition-header">Standard Edition Includes:</h3>
+                    <ul class="purchase__list">
+                        <li class="purchase__item">Final Fantasy VII Remake</li>
+                        <li class="purchase__item">Reversible Cover</li>
+                        <li class="purchase__item">Chocobo Chick Summon Materia</li>
+                    </ul>
+                    <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
+                </div>
+            </div>
+
+            <!-- Deluxe Edition -->
+            <div class="purchase__content purchase__content--3">
+                <div class="purchase__product">
+                    <img class="purchase__product--img" src="media/preorder/3.jpg" alt="Deluxe Edition">
+                </div>
+                <div class="purchase__description">
+                    <p class="purchase__text">
+                        A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
+                    </p>
+                    <h3 class="purchase__edition-header">Deluxe Edition Includes:</h3>
+                    <ul class="purchase__list">
+                        <li class="purchase__item">Final Fantasy VII Remake</li>
+                        <li class="purchase__item">Reversible Cover</li>
+                        <li class="purchase__item">Cactuar Summon Materia</li>
+                        <li class="purchase__item">Chocobo Chick Summon Materia</li>
+                    </ul>
+                    <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
+                </div>
+            </div>
+
+            <!-- 1st Class Edition -->
+            <div class="purchase__content purchase__content--4">
+                <div class="purchase__product">
+                    <img class="purchase__product--img" src="media/preorder/4.jpg" alt="Standard Edition">
+                </div>
+                <div class="purchase__description">
+                    <p class="purchase__text">
+                        This limited-quantity, large-format action figure set is the only way you can get both Cloud and the Hardy-Daytona together.
+                    </p>
+                    <h3 class="purchase__edition-header">1st Class Edition Includes:</h3>
+                    <ul class="purchase__list">
+                        <li class="purchase__item">Final Fantasy VII Remake</li>
+                        <li class="purchase__item">Reversible Cover</li>
+                        <li class="purchase__item">Play Arts Kai Cloud Strife & Hardy Daytona</li>
+                        <li class="purchase__item">Sephiroth Steelbook Case</li>
+                        <li class="purchase__item">Hardback Artbook</li>
+                        <li class="purchase__item">Mini-Soundtrack CD</li>
+                        <li class="purchase__item">Carbuncle Materia</li>
+                        <li class="purchase__item">Cactuar Summon Materia</li>
+                        <li class="purchase__item">Chocobo Chick Summon Materia</li>
+                    </ul>
+                    <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
                 </div>
             </div>
         </div>
@@ -357,11 +321,18 @@
     <footer class="footer">
         <div class="row">
             <p class="footer__text">
-                &copy; 2020 Site Designed & Developed by 
+                &copy; 2021 Site Designed & Developed by 
                 <a href="https://torralbajose.com/" target="_blank" class="footer__text-link">Jose Torralba</a>
             </p>
         </div>
     </footer>
+
+    <!-- MODAL -->
+    <div class="modal hidden">
+        <button class="modal__close">&times;</button>
+        <div class="modal__content"></div>
+    </div>
+    <div class="overlay hidden"></div>
 
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
