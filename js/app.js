@@ -1,69 +1,54 @@
 function displayCountdown() {
-    // Release Date
-    const releaseDate = new Date('April 10, 2020 00:00:00').getTime();
+   const releaseDate = new Date('April 10, 2022 00:00:00').getTime();
+   setInterval( () => {
 
-    const countdown = setInterval( () => {
+      // Gets Current Date & Distance Between Release Date
+      const currentDate = new Date().getTime();
+      const distance = releaseDate - currentDate;
 
-        // Gets Current Date & Distance Between Release Date
-        const currentDate = new Date().getTime();
-        const distance = releaseDate - currentDate;
+      // Calculates Time Before Release
+      const daysLeft = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hoursLeft = Math.floor((distance % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60))
+      const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
 
-        // Calculates Days/Hours/Minutes/Seconds Left
-        const daysLeft = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hoursLeft = Math.floor((distance % (1000 * 60 * 60 * 24 )) / (1000 * 60 * 60))
-        const minutesLeft = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const secondsLeft = Math.floor((distance % (1000 * 60)) / 1000);
+      // Gets and Displays Days/Hours/Minutes/Seconds
+      const showDay = document.getElementById('days');
+      showDay.textContent = daysLeft;
 
-        // Gets Days/Hours/Minutes/Seconds and Displays it
-        const showDay = document.getElementById('days');
-        showDay.textContent = daysLeft;
+      const showHours = document.getElementById('hours');
+      showHours.textContent = hoursLeft;
 
-        const showHours = document.getElementById('hours');
-        showHours.textContent = hoursLeft;
+      const showMinutes = document.getElementById('mins');
+      showMinutes.textContent = minutesLeft;
 
-        const showMinutes = document.getElementById('mins');
-        showMinutes.textContent = minutesLeft;
+      const showSeconds = document.getElementById('secs');
+      showSeconds.textContent = secondsLeft;
 
-        const showSeconds = document.getElementById('secs');
-        showSeconds.textContent = secondsLeft;
+      // Gets Countdown Container
+      const getCountdownContainer = document.getElementById('countdown');
 
-        // Gets Countdown Container
-        const getCountdownContainer = document.getElementById('countdown');
+      // When countdown reaches release date
+      if (distance < 0 ) {
+         clearInterval(getCountdownContainer);
 
-        // When countdown reaches release date
-        if (distance < 0 ) {
-            clearInterval(getCountdownContainer);
+         getCountdownContainer.style.display = 'none';
 
-            getCountdownContainer.style.display = 'none';
+         const getMainHeading = document.querySelector('.primary-heading--main');
+         getMainHeading.textContent = 'Available';
 
-            const getMainHeading = document.querySelector('.primary-heading--main');
-            getMainHeading.textContent = 'Available'
+         const getSubHeading = document.querySelector('.primary-heading--sub');
+         getSubHeading.textContent = 'Now';
 
-            const getSubHeading = document.querySelector('.primary-heading--sub');
-            getSubHeading.textContent = 'Now'
-
-            // Replaces Text
-            const checkAvailability = document.querySelectorAll('#availability');
-            checkAvailability.forEach(function (checkAvailability) {
-                checkAvailability.textContent = 'Purchase';
-            });
-        };
-    }, 1000);
+         // Replaces Text
+         const checkAvailability = document.querySelectorAll('#availability');
+         checkAvailability.forEach(function (checkAvailability) {
+            checkAvailability.textContent = 'Purchase';
+         });
+      };
+   }, 1000);
 };
-
-// Displays Countdown
 displayCountdown();
-
-
-//////////////////////////////////////////////////////////////////////////////////
-// Purchase Button Scrolling
-const btnScrollTo = document.querySelector('.btn--main');
-
-btnScrollTo.addEventListener('click', function(e) {
-    e.preventDefault();
-    const btnID = e.target.getAttribute('href');
-    document.querySelector(btnID).scrollIntoView({ behavior: 'smooth' })
-});
 
 
 //////////////////////////////////////////////////////////////////////////////////
@@ -132,25 +117,25 @@ const imgContainer = document.querySelectorAll('.gallery__container')
 
 // Displays Modal / Adds Img Source
 const openModal = function (e) {
-    e.preventDefault();
+   e.preventDefault();
 
-    // Matching Strategy / Selects Targeted Img
-    if (e.target.classList.contains('gallery__img')) {
-        modal.classList.remove('hidden');
-        overlay.classList.remove('hidden');
+   // Matching Strategy / Selects Targeted Img
+   if (e.target.classList.contains('gallery__img')) {
+   modal.classList.remove('hidden');
+   overlay.classList.remove('hidden');
 
-        // Adds Targeted Image to Modal
-        const imgClicked = e.target.getAttribute('src');
-        modalContent.innerHTML = ' ';
-        modalContent.insertAdjacentHTML('beforeend', `<img src="${imgClicked}" class="modal__img">`)
-    }
+   // Adds Targeted Image to Modal
+   const imgClicked = e.target.getAttribute('src');
+   modalContent.innerHTML = ' ';
+   modalContent.insertAdjacentHTML('beforeend', `<img src="${imgClicked}" class="modal__img">`)
+   }
 };
 
 
 // Closes Modal / Removes Img Source
 const closeModal = function () {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
+   modal.classList.add('hidden');
+   overlay.classList.add('hidden');
 };
 
 // Event Handlers
@@ -196,15 +181,9 @@ navigationBtn.addEventListener('click', function() {
 document.querySelector('.navigation__list').addEventListener('click', function(e) {
     e.preventDefault();
 
-    // Matching Strategy
-    if (e.target.classList.contains('navigation__link')) {
-        const id = e.target.getAttribute('href');
-        document.querySelector(id).scrollIntoView({ behavior: 'smooth' })
-
-        if (navigationContainer.classList.contains('navigation__active')) {
-            hideNav();
-        }
-    }
+   if (navigationContainer.classList.contains('navigation__active')) {
+      hideNav();
+   }
 })
 
 
@@ -237,8 +216,6 @@ trailerSrc.forEach(function(source, i) {
     const createDots = `<button class="dots__dot" data-src="${source}" id="${i + 1}"></button>`;
     dotsContainer.insertAdjacentHTML('beforeend', createDots)
 })
-
-
 
 // Gets Dots
 const dots = document.querySelectorAll('.dots__dot');
@@ -287,8 +264,8 @@ function displayTrailer(cur) {
 }
 
 // Keeps Track of Current Trailer for Dots
-function currentTrailer(n) {
-    displayTrailer(curTrailer = n);
+function currentTrailer(cur) {
+    displayTrailer(curTrailer = cur);
 }
 
 
@@ -300,13 +277,13 @@ nextTrailer.addEventListener('click', plusTrailers);
 
 // Dots on Click Changes Current Trailer
 dots.forEach(function (curDot) {
-    curDot.addEventListener('click', function() {
+   curDot.addEventListener('click', function() {
 
-        var dotID = Number(curDot.id);
-        currentTrailer(dotID)
-        activateDot(curTrailer)
-        trailer.src = curDot.dataset.src
-    });
+      var dotID = Number(curDot.id);
+      currentTrailer(dotID)
+      activateDot(curTrailer)
+      trailer.src = curDot.dataset.src
+   });
 });
 
 
@@ -315,8 +292,8 @@ dots.forEach(function (curDot) {
 
 // Selects Editions, Editions Container, Editions Contents
 const editions = document.querySelectorAll('.btn--editions');
-const editionsContainer = document.querySelector('.purchase__editions');
-const editionsContent = document.querySelectorAll('.purchase__content')
+const editionsContainer = document.querySelector('.editions__tabs');
+const editionsContent = document.querySelectorAll('.edition')
 
 // Purchase Editions Tab on Click
 editionsContainer.addEventListener('click', function(e) {
@@ -332,6 +309,17 @@ editionsContainer.addEventListener('click', function(e) {
     clicked.classList.add('btn--editions-active')
 
     // Active Container Goes Here
-    editionsContent.forEach(ec => ec.classList.remove('purchase__content--active'));  // ec = Editions Content
-    document.querySelector(`.purchase__content--${clicked.dataset.tab}`).classList.add('purchase__content--active')
+    editionsContent.forEach(ec => ec.classList.remove('edition__active'));  // ec = Editions Content
+    document.querySelector(`.edition__${clicked.dataset.tab}`).classList.add('edition__active')
+    console.log(`.edition__${clicked.dataset.tab}`)
+});
+
+
+// Scroll animation
+$("a.scroll").click(function (event) {
+   event.preventDefault();
+
+   $("html, body").animate({
+      scrollTop: $($(this).attr("href")).offset().top
+   }, 1000);
 });

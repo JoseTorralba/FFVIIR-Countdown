@@ -1,341 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Final Fantasy VII Countdown</title>
-    <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- FONTAWESOME CDN -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Final Fantasy VII Countdown</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
-<body>
+<body class="grid">
+   <div class="modal hidden">
+      <button class="modal__close">&times;</button>
+      <div class="modal__content"></div>
+   </div>
+   <div class="overlay hidden"></div>
 
-    <!-- Navigation -->
-    <div class="navigation">
-        <div class="navigation__button">
-            <i class="fas fa-bars navigation__button--toggle" aria-hidden="true"></i>
-        </div>
+   <div class="navigation">
+      <div class="navigation__button">
+         <i class="fas fa-bars navigation__button--toggle" aria-hidden="true"></i>
+      </div>
+      <nav class="navigation__background">
+         <ul class="navigation__list">
+            <li class="navigation__item">
+               <a href="#story" class="navigation__link scroll">Story</a>
+            </li>
+            <li class="navigation__item">
+               <a href="#trailers" class="navigation__link scroll">Trailers</a>
+            </li>
+            <li class="navigation__item">
+               <a href="#characters" class="navigation__link scroll">Characters</a>
+            </li>
+            <li class="navigation__item">
+               <a href="#gallery" class="navigation__link scroll">Gallery</a>
+            </li>
+            <li class="navigation__item">
+               <a href="#purchase" class="navigation__link scroll" id="availability">Pre-Order</a>
+            </li>
+         </ul>
+      </nav>
+   </div>
 
-        <nav class="navigation__background">
-            <ul class="navigation__list">
-                <li class="navigation__item">
-                    <a href="#story" class="navigation__link">Story</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#trailers" class="navigation__link">Trailers</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#characters" class="navigation__link">Characters</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#gallery" class="navigation__link">Gallery</a>
-                </li>
-                <li class="navigation__item">
-                    <a href="#purchase" class="navigation__link" id="availability">Pre-Order</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+   <header class="header">
+      <div class="header__text-box">
+         <img class="header__img" src="media/assets/logo.png" alt="Final Fantasy VII Remake Logo">
+         <h1 class="primary-heading">
+            <span class="primary-heading--main">Available</span>
+            <span class="primary-heading--sub">04.10.2020</span>
+         </h1>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header__text-box">
-            <div class="header__img-box">
-                <img class="header__img" src="media/assets/logo.png" alt="Final Fantasy VII Remake Logo">
-            </div>
-            <h1 class="primary-heading">
-                <span class="primary-heading--main">Available</span>
-                <span class="primary-heading--sub">04.10.2020</span>
-            </h1>
-
-            <!-- Countdown -->
-            <div class="header__countdown" id="countdown">
-                <p class="header__countdown-box">
-                    <span class="header__countdown-box--1" id="days"></span>
-                    <span class="header__countdown-box--2">Days</span>
-                </p>
-
-                <p class="header__countdown-box">
-                    <span class="header__countdown-box--1" id="hours"></span>
-                    <span class="header__countdown-box--2">Hours</span>
-                </p>
-
-                <p class="header__countdown-box">
-                    <span class="header__countdown-box--1" id="mins"></span>
-                    <span class="header__countdown-box--2">Mins</span>
-                </p>
-
-                <p class="header__countdown-box">
-                    <span class="header__countdown-box--1" id="secs"></span>
-                    <span class="header__countdown-box--2">Secs</span>
-                </p>
-            </div>
-
-            <!-- Purchase Button -->
-            <div class="header__buttons">
-                <a href="#purchase" class="btn btn--main" id="availability">Pre-order</a>
-                <a href="https://store.playstation.com/en-us/product/UP0082-CUSA07237_00-FFVIIREMAKETRIAL" target="_blank" class="btn btn--sub">Play The Demo</a>
-            </div>
-        </div>
-
-        <!-- Waves -->
-        <div class="header__waves">
-            <div class="header__wave--1"></div>
-            <div class="header__wave--2"></div>
-            <div class="header__wave--3"></div>
-            <div class="header__wave--4"></div>
-        </div>
-    </header>
-  
-    <!-- STORY SECTION -->
-    <section class="story-section" id="story">
-
-        <div class="story">
-            <h2 class="story__heading margin-bottom-small">
-                Story
-            </h2>
-
-            <div class="story__grid">
-                <div class="story__content">
-                    <p class="story__text">
-                        Mako, the lifeblood of the planet and the fuel that powers the city of Midgar...
-                    </p>
-                    <p class="story__text">
-                        By exploiting this resource through their Mako Reactors, the Shinra Electric Power Company has all but seized control of the entire world. A ragtag group of idealists, known as Avalanche, are one of the last bastions of resistance.
-                    </p>
-                    <p class="story__text">
-                        Cloud Strife, a former member of Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, to destroy Mako Reactor 1 in the city of Midgar.
-                    </p>
-                    <p class="story__text">
-                        The bombing plunges the city into fiery chaos, and amidst the raging inferno, Cloud is tormented by visions of a bitter enemy long thought dead.
-                    </p>
-                    <p class="story__text">
-                        Once more begins a story that will shape the destiny of an entire world.
-                    </p>
-                </div>
-                <div class="story__empty">
-                    &nbsp;
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRAILER SECTION -->
-    <section class="trailer-section" id="trailers">
-        <div class="margin-bottom-medium">
-            <h2 class="secondary-heading text-center">
-                Trailers
-            </h2>
-        </div>
-
-        <div class="trailer">
-            <!-- Current Trailer Displaying -->
-            <div class="trailer__container">
-                <iframe class="trailer__current" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-
-            <!-- Dots -->
-            <div class="dots">
-                <a class="dots__prev">&#10094;</a>
-                <a class="dots__next">&#10095;</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CHARACTERS SECTION -->
-    <section class="character-section" id="characters">
-        <div class="margin-bottom-big">
-            <h2 class="secondary-heading text-center">
-                Characters
-            </h2>
-        </div>
-
-        <div class="character">
-            <!-- Cloud -->
-            <div class="character__box">
-                <div class="character__box--img-1">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Cloud Strife</h3>
-                        <p class="character__info--bio">
-                            Former member of SOLDIER, is now a mercenary who will take any job. He gradually gets caught up in a struggle for the life of the planet.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Aerith -->
-            <div class="character__box">
-                <div class="character__box--img-2">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Aerith Gainsborough</h3>
-                        <p class="character__info--bio">
-                            A florist who lives in the Sector 5 slums. Shinra has kept a close eye on her ever since she was a child, as she has the ability to hear the voice of the planet.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Tifa -->
-            <div class="character__box">
-                <div class="character__box--img-3">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Tifa Lockheart</h3>
-                        <p class="character__info--bio">
-                            A loyal member of Avalanche, an underground organization opposed to Shinra. Tifa also runs Seventh Heaven, a popular bar in the Sector 7 slums.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Barret -->
-            <div class="character__box">
-                <div class="character__box--img-4">
-                    <div class="character__info">
-                        <h3 class="character__info--name">Barret Wallace</h3>
-                        <p class="character__info--bio">
-                            Leader of AVALANCHE, Barret is fighting against Shinra. He and his comrades watch and keep the people safe including his daughter Marlene.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>        
-    </section>
-
-    <!-- GALLERY SECTION -->
-    <section class="gallery-section" id="gallery">
-        <div class="margin-bottom-huge">
-            <h2 class="secondary-heading text-center">
-                Gallery
-            </h2>
-        </div>
-        <div class="gallery"></div>
-    </section>
-
-    <!-- PURCHASE SECTION -->
-    <section class="purchase-section" id="purchase">
-        <div class="purchase">
-            <div class="margin-bottom-medium">
-                <h2 class="secondary-heading">
-                    Order Your Copy
-                </h2>
-            </div>
-
-            <!-- Game Editions -->
-            <div class="purchase__editions">
-                <button class="btn btn--editions btn--editions-active" data-tab="1">PS5 | Standard Edition</button>
-                <button class="btn btn--editions" data-tab="2">PS4 | Standard Edition</button>
-                <button class="btn btn--editions" data-tab="3">PS4 | Deluxe Edition</button>
-                <button class="btn btn--editions" data-tab="4">PS4 | 1st Class Edition</button>
-            </div>
-
-            <!-- PS5 Standard Edition -->
-            <div class="purchase__content purchase__content--1 purchase__content--active">
-                <div class="purchase__product">
-                    <img class="purchase__product--img" src="media/preorder/1.jpg" alt="Standard Edition">
-                </div>
-                <div class="purchase__description">
-                    <p class="purchase__text">
-                        FINAL FANTASY VII REMAKE INTERGRADE includes a wealth of graphical, gameplay and system enhancements.
-                        Immerse yourself in the city of Midgar like never before, with improved textures, lighting, and background environments.
-                    </p>
-                    <h3 class="purchase__edition-header">PS5 Standard Edition Includes:</h3>
-                    <ul class="purchase__list">
-                        <li class="purchase__item">Final Fantasy VII Remake Intergrade</li>
-                        <li class="purchase__item">Reversible Cover</li>
-                        <li class="purchase__item">New Episode Featuring Yuffie Kisaragi</li>
-                    </ul>
-                    <a href="https://store.na.square-enix-games.com/en_US/product/629902/final-fantasy-vii-remake-intergrade-ps5" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                </div>
-            </div>
-
-            <!-- PS4 Standard Edition -->
-            <div class="purchase__content purchase__content--2">
-                <div class="purchase__product">
-                    <img class="purchase__product--img" src="media/preorder/2.jpg" alt="Standard Edition">
-                </div>
-                <div class="purchase__description">
-                    <p class="purchase__text">
-                        A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
-                    </p>
-                    <h3 class="purchase__edition-header">Standard Edition Includes:</h3>
-                    <ul class="purchase__list">
-                        <li class="purchase__item">Final Fantasy VII Remake</li>
-                        <li class="purchase__item">Reversible Cover</li>
-                        <li class="purchase__item">Chocobo Chick Summon Materia</li>
-                    </ul>
-                    <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                </div>
-            </div>
-
-            <!-- Deluxe Edition -->
-            <div class="purchase__content purchase__content--3">
-                <div class="purchase__product">
-                    <img class="purchase__product--img" src="media/preorder/3.jpg" alt="Deluxe Edition">
-                </div>
-                <div class="purchase__description">
-                    <p class="purchase__text">
-                        A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
-                    </p>
-                    <h3 class="purchase__edition-header">Deluxe Edition Includes:</h3>
-                    <ul class="purchase__list">
-                        <li class="purchase__item">Final Fantasy VII Remake</li>
-                        <li class="purchase__item">Reversible Cover</li>
-                        <li class="purchase__item">Cactuar Summon Materia</li>
-                        <li class="purchase__item">Chocobo Chick Summon Materia</li>
-                    </ul>
-                    <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                </div>
-            </div>
-
-            <!-- 1st Class Edition -->
-            <div class="purchase__content purchase__content--4">
-                <div class="purchase__product">
-                    <img class="purchase__product--img" src="media/preorder/4.jpg" alt="Standard Edition">
-                </div>
-                <div class="purchase__description">
-                    <p class="purchase__text">
-                        This limited-quantity, large-format action figure set is the only way you can get both Cloud and the Hardy-Daytona together.
-                    </p>
-                    <h3 class="purchase__edition-header">1st Class Edition Includes:</h3>
-                    <ul class="purchase__list">
-                        <li class="purchase__item">Final Fantasy VII Remake</li>
-                        <li class="purchase__item">Reversible Cover</li>
-                        <li class="purchase__item">Play Arts Kai Cloud Strife & Hardy Daytona</li>
-                        <li class="purchase__item">Sephiroth Steelbook Case</li>
-                        <li class="purchase__item">Hardback Artbook</li>
-                        <li class="purchase__item">Mini-Soundtrack CD</li>
-                        <li class="purchase__item">Carbuncle Materia</li>
-                        <li class="purchase__item">Cactuar Summon Materia</li>
-                        <li class="purchase__item">Chocobo Chick Summon Materia</li>
-                    </ul>
-                    <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="row">
-            <p class="footer__text">
-                &copy; 2021 Site Designed & Developed by 
-                <a href="https://torralbajose.com/" target="_blank" class="footer__text-link">Jose Torralba</a>
+         <div id="countdown">
+            <p class="header__countdown">
+               <span class="header__countdown--1" id="days"></span>
+               <span class="header__countdown--2">Days</span>
             </p>
-        </div>
-    </footer>
+            <p class="header__countdown">
+               <span class="header__countdown--1" id="hours"></span>
+               <span class="header__countdown--2">Hours</span>
+            </p>
+            <p class="header__countdown">
+               <span class="header__countdown--1" id="mins"></span>
+               <span class="header__countdown--2">Mins</span>
+            </p>
+            <p class="header__countdown">
+               <span class="header__countdown--1" id="secs"></span>
+               <span class="header__countdown--2">Secs</span>
+            </p>
+         </div>
 
-    <!-- MODAL -->
-    <div class="modal hidden">
-        <button class="modal__close">&times;</button>
-        <div class="modal__content"></div>
-    </div>
-    <div class="overlay hidden"></div>
+         <a href="#purchase" class="btn btn--main" id="availability">Pre-order</a>
+         <a href="https://store.playstation.com/en-us/product/UP0082-CUSA07237_00-FFVIIREMAKETRIAL" target="_blank" class="btn btn--sub">Play The Demo</a>
+      </div>
+      <!-- <div class="header__waves">
+         <div class="header__wave--1"></div>
+         <div class="header__wave--2"></div>
+         <div class="header__wave--3"></div>
+         <div class="header__wave--4"></div>
+      </div> -->
+   </header>
 
-    <!-- JQUERY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/app.js"></script>
+
+   <!-- Story Section -->
+   <div class="story__content" id="story">
+      <div class="margin-bottom-small">
+         <h2 class="secondary-heading">Story</h2>
+      </div>
+      <div class="story__text">
+         <p>Mako, the lifeblood of the planet and the fuel that powers the city of Midgar...</p>
+         <p>
+            By exploiting this resource through their Mako Reactors, the Shinra Electric Power Company has all but seized control of the entire world. A ragtag group of idealists, known as Avalanche, are one of the last bastions of resistance.
+         </p>
+         <p>
+            Cloud Strife, a former member of Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, to destroy Mako Reactor 1 in the city of Midgar.
+         </p>
+         <p>
+            The bombing plunges the city into fiery chaos, and amidst the raging inferno, Cloud is tormented by visions of a bitter enemy long thought dead.
+         </p>
+         <p>Once more begins a story that will shape the destiny of an entire world.</p>
+      </div>
+   </div>
+   <div class="story__picture">&nbsp;</div>
+
+
+
+   <section class="trailers-section" id="trailers">
+      <div class="margin-bottom-medium">
+         <h2 class="secondary-heading text-center">
+            Trailers
+         </h2>
+      </div>
+
+      <div class="trailer">
+         <div class="trailer__container">
+            <iframe class="trailer__current" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
+
+         <div class="dots">
+            <a class="dots__prev">&#10094;</a>
+            <a class="dots__next">&#10095;</a>
+         </div>
+      </div>
+   </section>
+
+   <section class="characters-section" id="characters">
+      <div class="margin-bottom-big">
+         <h2 class="secondary-heading text-center">
+            Characters
+         </h2>
+      </div>
+
+      <div class="characters">
+         <div class="character">
+            <div class="character__img--1">
+               <div class="character__info">
+                  <h3 class="character__info--name">Cloud Strife</h3>
+                  <p class="character__info--bio">
+                     Former member of SOLDIER, is now a mercenary who will take any job. He gradually gets caught up in a struggle for the life of the planet.
+                  </p>
+               </div>
+            </div>
+         </div>
+
+         <div class="character">
+            <div class="character__img--2">
+               <div class="character__info">
+                  <h3 class="character__info--name">Aerith Gainsborough</h3>
+                  <p class="character__info--bio">
+                  A florist who lives in the Sector 5 slums. Shinra has kept a close eye on her ever since she was a child, as she has the ability to hear the voice of the planet.
+               </div>
+            </div>
+         </div>
+
+         <div class="character">
+            <div class="character__img--3">
+               <div class="character__info">
+                  <h3 class="character__info--name">Tifa Lockheart</h3>
+                  <p class="character__info--bio">
+                     A loyal member of Avalanche, an underground organization opposed to Shinra. Tifa also runs Seventh Heaven, a popular bar in the Sector 7 slums.
+                  </p>
+               </div>
+            </div>
+         </div>
+
+         <div class="character">
+            <div class="character__img--4">
+               <div class="character__info">
+                  <h3 class="character__info--name">Barret Wallace</h3>
+                  <p class="character__info--bio">
+                     Leader of AVALANCHE, Barret is fighting against Shinra. He and his comrades watch and keep the people safe including his daughter Marlene.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="gallery-section" id="gallery">
+      <div class="margin-bottom-huge">
+         <h2 class="secondary-heading text-center">Gallery</h2>
+      </div>
+      <div class="gallery"></div>
+   </section>
+
+   <section class="purchase-section" id="purchase">
+      <div class="editions">
+         <div class="margin-bottom-medium">
+            <h2 class="secondary-heading">
+               Order Your Copy
+            </h2>
+         </div>
+         <div class="editions__tabs">
+            <button class="btn btn--editions btn--editions-active" data-tab="1">PS5 Standard</button>
+            <button class="btn btn--editions" data-tab="2">Standard Edition</button>
+            <button class="btn btn--editions" data-tab="3">Deluxe Edition</button>
+            <button class="btn btn--editions" data-tab="4">1st Class Edition</button>
+         </div>
+
+         <div class="edition edition__1 edition__active">
+            <img class="edition__img" src="media/preorder/1.jpg" alt="PS5 Standard Edition">
+            <div class="edition__info">
+               <p class="edition__text">
+                  The new episode featuring Yuffie is a brand-new adventure in the world of FINAL FANTASY VII REMAKE INTERGRADE. Play as Wutai ninja Yuffie Kisaragi as she infiltrates Midgar and conspires with Avalanche HQ to steal the ultimate materia from the Shinra Electric Power Company.
+               </p>
+               <h3 class="edition__heading">PS5 Standard Edition Includes:</h3>
+               <ul class="edition__list">
+                  <li>Final Fantasy VII Remake Intergrade</li>
+                  <li>Reversible Cover</li>
+                  <li>New Episode Featuring Yuffie Kisaragi</li>
+               </ul>
+               <a href="https://store.na.square-enix-games.com/en_US/product/629902/final-fantasy-vii-remake-intergrade-ps5" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
+            </div>
+         </div>
+
+         <div class="edition edition__2">
+            <img class="edition__img" src="media/preorder/2.jpg" alt="PS4 Standard Edition">
+            <div class="edition__info">
+               <p class="edition__text">
+                  In the sprawling city of Midgar, an anti-Shinra organization calling themselves Avalanche have stepped up their resistance. Cloud Strife, a former member of Shinra’s elite SOLDIER unit now turned mercenary, lends his aid to the group, unaware of the epic consequences that await him.
+               </p>
+               <h3 class="edition__heading">PS4 Standard Edition Includes:</h3>
+               <ul class="edition__list">
+                  <li>Final Fantasy VII Remake</li>
+                  <li>Reversible Cover</li>
+                  <li>Chocobo Chick Summon Materia</li>
+               </ul>
+               <a href="https://store.na.square-enix-games.com/en_US/product/562559/final-fantasy-vii-remake-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
+            </div>
+         </div>
+
+         <div class="edition edition__3">
+            <img class="edition__img" src="media/preorder/3.jpg" alt="PS4 Deluxe Edition">
+            <div class="edition__info">
+               <p class="edition__text">
+                  A spectacular re-imagining of one of the most visionary games ever, the first game in this project will be set in the eclectic city of Midgar and presents a fully standalone gaming experience.
+               </p>
+               <h3 class="edition__heading">PS4 Deluxe Edition Includes:</h3>
+               <ul class="edition__list">
+                  <li>Final Fantasy VII Remake</li>
+                  <li>Steelbook Case</li>
+                  <li>Cactuar Summon Materia DLC</li>
+                  <li>Mini-Soundtrack</li>
+                  <li>Art Book</li>
+               </ul>
+               <a href="https://store.na.square-enix-games.com/en_US/product/562667/final-fantasy-vii-remake-deluxe-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
+            </div>
+         </div>
+
+         <div class="edition edition__4">
+            <img class="edition__img" src="media/preorder/4.jpg" alt="1st Class Edition">
+            <div class="edition__info">
+               <p class="edition__text">
+                  Included in the FINAL FANTASY® VII REMAKE 1ST CLASS EDITION, is protagonist Cloud and the Hardy Daytona as PLAY ARTS KAI action figures!
+               </p>
+               <h3 class="edition__heading">1st Class Edition Includes:</h3>
+               <ul class="edition__list">
+                  <li>Final Fantasy VII Remake</li>
+                  <li>Play Arts Kai Cloud Strife & Hardy Daytona</li>
+                  <li>Sephiroth Steelbook Case</li>
+                  <li>Art Book</li>
+                  <li>Mini-Soundtrack</li>
+                  <li>Cactuar, Chocobo Chick & Carbuncle Summon Materia</li>
+               </ul>
+               <a href="https://store.na.square-enix-games.com/en_US/product/562671/final-fantasy-vii-remake-1st-class-edition-ps4" target="_blank" class="btn btn--purchase" id="availability">Pre-Order</a>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <footer class="footer">
+      <p class="footer__text">
+         &copy; 2022 Site Designed & Developed by 
+         <a href="https://torralbajose.com/" target="_blank" class="footer__link">Jose Torralba</a>
+      </p>
+   </footer>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="js/app.js"></script>
 </body>
 </html>

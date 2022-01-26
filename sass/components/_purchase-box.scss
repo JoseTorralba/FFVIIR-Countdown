@@ -1,79 +1,74 @@
-.purchase {
-    max-width: 114rem;
-    margin: 0 auto;
+.editions {
+   grid-template-columns: repeat(1, 1fr);
+   margin: 0 auto;
+   max-width: 114rem;
 
-    @include respond(tablet-mid) {
-        max-width: 100rem;
-        padding: 0 3rem;
-    }
+   &__tabs {
+      display: grid;
+      font-size: 1.4rem;
+      grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      max-width: 100rem;
+   }
+}
 
-    @include respond(phone) {
-        max-width: 70rem;
-    }
+.edition {
+   display: none;
+   position: relative;
 
-    &__editions {
-        @include respond(tablet-portrait) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 2.5rem;
-            margin-bottom: 2rem;
-        }
-    }
+   &__active {
+      background-color: rgb(20, 20, 20);
+      border-radius: 0 0 .5rem .5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+      grid-gap: 2rem;
+      padding: 4rem;
+      margin-top: -4rem;
 
-    &__content {
-        display: none;
+      @include respond(tablet-portrait) { 
+         margin-top: 0; 
+         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      }
+      @include respond(smaller-phone) {
+         margin-top: 0;
+         grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      
+      }
+   }
 
-        &--active {
-            background-color: rgb(20, 20, 20);
-            border-radius: 0 0 .5rem .5rem;
-            display: grid;
-            grid-template-columns: 70rem 1fr;
-            grid-gap: 4rem;
-            padding: 6rem 2rem 2rem;
-            margin-top: -4rem;
-            z-index: 10;
-            position: relative;
+   &__img,
+   &__info {
+      animation-name: fadeIn;
+      animation-duration: .8s;
+   }
 
-            @include respond(tablet-mid) {
-                grid-template-columns: repeat(1, 1fr);
-            }
+   &__info {
+      display: flex;
+      flex-direction: column;
 
-            @include respond(tablet-portrait) {
-                margin-top: 0;
-                padding: 3rem 2rem;
-            }
-        }
-    }
+   }
 
-    &__product,
-    &__description {
-        animation-name: fadeIn;
-        animation-duration: 1s;
-    }
-
-
-    &__product {
-        &--img {
-            width: 100%;
-        }
-    }
+   &__img {
+      width: 100%;
+   }
 
 
-    &__text {
-        font-size: 1.4rem;
+   &__text {
+      font-size: 1.4rem;
+      
+      &:not(:last-child) {
+         margin-bottom: 1.2rem;
+      }
+   }
 
-        &:not(:last-child) {
-            margin-bottom: 2rem;
-        }
-    }
+   &__heading {
+      color: $primary-color-light;
+      font-size: 1.5rem;
+      font-weight: 500;
+   }
 
-    &__edition-header {
-        color: $primary-color-light;
-        font-size: 1.7rem;
-    }
-
-    &__list {
-        font-size: 1.3rem;
-        list-style: none;
-    }
+   &__list {
+      font-size: 1.4rem;
+      list-style: none;
+      flex-grow: 1;
+   }
 }

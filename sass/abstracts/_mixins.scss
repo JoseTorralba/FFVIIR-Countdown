@@ -12,11 +12,9 @@
     @if $breakpoint == tablet-portrait {
         @media only screen and (max-width: 56.25em) { @content };
     }
-
     @if $breakpoint == tablet-mid {
         @media only screen and (max-width: 66.25em) { @content };
     }
-
     @if $breakpoint == tablet-landscape {
         @media only screen and (max-width: 75em) { @content };
     }
@@ -43,30 +41,4 @@
 @mixin removeSkewY {
     transform: skewY(0);
     & > * { transform: skewY(0); }
-}
-
-// Clears Float
-@mixin clearfix {
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-}
-
-@mixin addWidth {
-    max-width: 114rem;
-    margin: 0 auto;
-
-    @include respond(tablet-mid) {
-        max-width: 80rem;
-        padding: 0 3rem;
-    }
-    @include respond(tablet-mid) {
-        max-width: 70rem;
-    }
-
-    @include respond(phone) {
-        max-width: 50rem;
-    }
 }

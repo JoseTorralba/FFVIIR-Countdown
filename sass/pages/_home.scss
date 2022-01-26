@@ -1,41 +1,31 @@
-section {
-    padding: 6rem 0;
-    background-color: #000 !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    @include respond(tablet-portrait) {
-        background-attachment: scroll !important;
-    }
+.grid {
+   display: grid;
+   grid-template-rows: auto 100vh repeat(6, min-content);
+   grid-template-columns:
+      [full-start] minmax(auto, 1fr) 
+      [center-start] repeat(8, [col-start] minmax(min-content, 1fr) [col-end]) [center-end] 1fr [full-end]; 
 }
 
-// STORY SECTION
-.story-section {
-    @include backgroundImage(to left, 0, 1,'../media/background/story.jpg');
-    background-attachment: fixed;
+section { padding: 8rem 0; }
 
-    @include respond(tablet-portrait) {
-        @include backgroundImage(to bottom, .2, 1, '../media/background/story.jpg');
-    }
+.trailers-section {
+   @include backgroundImage(to right, .8, .2,'../media/background/trailer.jpg');
+   background-size: cover;
+   background-attachment: fixed;
+   grid-column: full-start / full-end;
+
+   @include respond(tablet-portrait) {
+      background-attachment: scroll;
+   }
 }
 
-.trailer-section {
-    @include backgroundImage(to bottom, .2, 1,'../media/background/trailer.jpg');
-}
+.characters-section { grid-column: full-start / full-end; }
+.gallery-section { grid-column: center-start / center-end; }
 
-.character-section {
-    padding: 6rem 0 10rem;
-}
-
-// GALLERY SECTION
-.gallery-section {
-    @include addSkewY;
-    @include respond(tablet-landscape) { @include removeSkewY; }
-}
-
-// PURCHASE SECTION
 .purchase-section {
-    @include backgroundImage(to bottom, .2, 1,'../media/background/purchase.jpg');
-    background-attachment: fixed;
-    position: relative;
+   @include backgroundImage(to right, .8, .2,'../media/background/purchase.jpg');
+   background-attachment: fixed;
+   background-size: cover;
+   background-color: rgb(90, 173, 211);
+   grid-column: full-start / full-end;
 }
