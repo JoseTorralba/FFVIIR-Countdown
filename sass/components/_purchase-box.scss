@@ -1,11 +1,10 @@
 .editions {
-   grid-template-columns: repeat(1, 1fr);
    margin: 0 auto;
    max-width: 114rem;
 
    &__tabs {
       display: grid;
-      font-size: 1.4rem;
+
       grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
       max-width: 100rem;
    }

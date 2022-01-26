@@ -4,16 +4,13 @@
    background-repeat: no-repeat;
    background-size: cover;
    grid-column: full-start / full-end;
-   
+
    display: grid;
    align-items: center;
-
+   
    @include respond(tablet-portrait) {
+      @include backgroundImage(to bottom, .7, .7,'../media/background/header-mobile.jpg');
       background-attachment: scroll;
-   }
-
-   @include respond(phone) {
-      @include backgroundImage(to bottom, .2, 1,'../media/background/header-mobile.jpg');
       text-align: center;
    }
 
@@ -21,16 +18,14 @@
       padding: 0 10%;
    }
 
-
    &__img {
       max-height: 25rem;
       max-width: 100%;
 
       @include respond(tablet-portrait) {
-         max-height: 20rem;
+         max-height: 18rem;
       }
    }
-
 
    &__countdown {
       display: inline-block;
@@ -41,7 +36,7 @@
          margin-right: 3rem;
       }
 
-      @include respond(phone) {
+      @include respond(tablet-portrait) {
          &:not(:last-child) {
             margin-right: 1.3rem;
          }
@@ -52,8 +47,8 @@
          font-size: 3.5rem;
          display: block;
 
-         @include respond(smaller-phone) {
-            font-size: 3rem;
+         @include respond(tablet-portrait) {
+            font-size: 2.5rem;
          }
 
       }
@@ -66,12 +61,37 @@
          letter-spacing: 3px;
          text-shadow: 0px 5px 10px #000;
 
-         @include respond(smaller-phone) {
+         @include respond(tablet-portrait) {
             font-size: 1.7rem;
          }
       }
 
    }
+
+   &__btn {
+      @include respond(phone) {
+         display: flex;
+         flex-direction: column;
+         // display: block;
+         width: 30rem;
+         margin: 0 auto;
+      }
+   }
+
+   &__btn a {
+      margin-top: 3rem;
+      
+      &:not(:last-child) {
+         margin-right: 2rem;
+      }
+
+      @include respond(phone) {
+         &:not(:last-child) {
+            margin-right: 0;
+         }
+      }
+   }
+
 
    // &__waves {
    //    // width: 100%;

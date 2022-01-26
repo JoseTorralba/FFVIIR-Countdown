@@ -28,4 +28,8 @@ section { padding: 8rem 0; }
    background-size: cover;
    background-color: rgb(90, 173, 211);
    grid-column: full-start / full-end;
+
+   @include respond(tablet-portrait) {
+      background-attachment: scroll;
+   }
 }

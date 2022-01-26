@@ -1,67 +1,66 @@
 .dots {
-    margin-top: 2rem;
-    position: relative;
-    text-align: center;
+   margin-top: 2rem;
+   position: relative;
+   text-align: center;
 
-    &__prev, &__next {
-        background-color: $primary-color;
-        border-radius: .2rem;
-        color: white;
-        cursor: pointer;
-        font-size: 1.7rem;
-        padding: .2rem 4.8rem;
-        position: absolute;
-        text-align: center;
-        text-shadow: 0px 2px 4px #000;
-        transition: 0.2s;
-        user-select: none;
+   &__prev, &__next {
+      background-color: $primary-color;
+      border-radius: .2rem;
+      color: white;
+      cursor: pointer;
+      font-size: 1.7rem;
+      padding: .2rem 3.4rem;
+      position: absolute;
+      text-align: center;
+      text-shadow: 0px 2px 4px #000;
+      transition: 0.2s;
+      user-select: none;
 
-        &:hover {
-            color: rgb(170, 170, 170);
-        }
+      &:hover {
+         color: rgb(170, 170, 170);
+      }
 
-        @include respond(phone) {
-            top: 6rem;
-            padding: .2rem 8rem;
-        }
-    }
+      @include respond(phone) {
+         top: 6rem;
+         padding: .2rem rem;
+      }
+   }
 
-    &__next {
-        right: 6%;
-        transform: translate(50%, -50%);
+   &__next {
+      right: 6%;
+      transform: translate(50%, -50%);
 
-        @include respond(phone) {
-            right: 30%;
-        }
-    }
+      @include respond(phone) {
+         right: 30%;
+      }
+   }
 
-    &__prev {
-        left: 6%;
-        transform: translate(-50%, -50%);
+   &__prev {
+      left: 6%;
+      transform: translate(-50%, -50%);
 
-        @include respond(phone) {
-            left: 30%;
-        }
-    }
+      @include respond(phone) {
+         left: 30%;
+      }
+   }
 
-    &__dot {
-        background-color: #b9b9b9;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0.7;
-        margin-right: 1.75rem;
-        height: 1.1rem;
-        width: 1.1rem;
-        transition: all 0.3s;
-        
-        &:last-child {
-            margin: 0;
-        }
+   &__dot {
+      background-color: #b9b9b9;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0.7;
+      height: 1.1rem;
+      width: 1.1rem;
+      transition: all 0.3s;
+      
+      &:not(:last-child) {
+         margin-right: 1.5rem;
+      }
 
-        &--active {
-            background-color: $primary-color-light;
-            opacity: 1;
-        }   
-    }
+      &--active {
+         background-color: $primary-color-light;
+         opacity: 1;
+      }   
+   }
 }

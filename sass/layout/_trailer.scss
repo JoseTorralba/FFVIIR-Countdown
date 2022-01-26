@@ -5,7 +5,7 @@
 
    @include respond(tablet-portrait) { max-width: 70rem; }
    @include respond(phone) { max-width: 70rem; }
-   @include respond(smaller-phone) { max-width: 50rem; }
+   @include respond(smaller-phone) { max-width: 40rem; }
 
    &__container {
       display: block; 
